@@ -111,6 +111,7 @@ endmacro(COLMAP_ADD_CUDA_SOURCES)
 # are the source files to use when building the target.
 macro(COLMAP_ADD_LIBRARY TARGET_NAME)
     # ${ARGN} will store the list of source files passed to this function.
+    add_definitions("/bigobj")
     add_library(${TARGET_NAME} ${ARGN})
     set_target_properties(${TARGET_NAME} PROPERTIES FOLDER
         ${COLMAP_TARGETS_ROOT_FOLDER}/${FOLDER_NAME})
@@ -122,6 +123,7 @@ endmacro(COLMAP_ADD_LIBRARY)
 # arguments are the source files to use when building the target.
 macro(COLMAP_ADD_CUDA_LIBRARY TARGET_NAME)
     # ${ARGN} will store the list of source files passed to this function.
+    add_definitions("/bigobj")
     cuda_add_library(${TARGET_NAME} ${ARGN})
     set_target_properties(${TARGET_NAME} PROPERTIES FOLDER
         ${COLMAP_TARGETS_ROOT_FOLDER}/${FOLDER_NAME})

@@ -1730,8 +1730,12 @@ void PatchMatchCuda::InitTransforms() {
   // Upload P, inv_P, C for source images
   //////////////////////////////////////////////////////////////////////////////
   const size_t kNumTformParams = 16 + 16 + 3;
-  float poses_host_data[kNumTformParams * problem_.src_image_idxs.size()];
-
+  // 动态申请数组
+  float *poses_host_data  = new float[kNumTformParams * problem_.src_image_idxs.size()];
+  for (size_t i = 0; i < kNumTformParams * problem_.src_image_idxs.size();
+       i++) {
+    poses_host_data[i] = 0;//赋值操作
+  }
   int offset = 0;
   for (const auto image_idx : problem_.src_image_idxs) {
     const Image &image = problem_.images->at(image_idx);
@@ -1757,7 +1761,7 @@ void PatchMatchCuda::InitTransforms() {
   poses_device_.reset(new CudaArrayWrapper<float>(
       kNumTformParams, problem_.src_image_idxs.size(), 1));
   poses_device_->CopyToDevice(poses_host_data);
-
+  delete[] poses_host_data;   //删除之前释放的空间
   poses_texture.addressMode[0] = cudaAddressModeBorder;
   poses_texture.addressMode[1] = cudaAddressModeBorder;
   poses_texture.addressMode[2] = cudaAddressModeBorder;

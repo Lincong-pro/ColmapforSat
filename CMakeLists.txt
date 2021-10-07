@@ -37,6 +37,10 @@ set(COLMAP_VERSION "3.6")
 set(COLMAP_VERSION_NUMBER "3600")
 set(CMAKE_CXX_STANDARD 14)
 
+if(MSVC)
+    # 在UWP平台，默认采用 /bigobj 的操作
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj /MP /wd4005 /wd4996 /wd4819 /wd4251 /wd4267 /wd4244 /wd4275 /wd4530 /wd4334 /wd4018")
+endif()
 # set cmake cxx compiler and c compiler
 # set(CMAKE_C_COMPILER /usr/bin/gcc CACHE PATH "" FORCE)
 # set(CMAKE_CXX_COMPILER /usr/bin/g++ CACHE PATH "" FORCE)
@@ -91,6 +95,7 @@ endif()
 
 find_package(Ceres REQUIRED)
 
+set(Boost_USE_STATIC_LIBS OFF)
 find_package(Boost REQUIRED COMPONENTS
              program_options
              filesystem
