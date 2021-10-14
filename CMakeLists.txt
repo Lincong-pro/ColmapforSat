@@ -37,6 +37,13 @@ set(COLMAP_VERSION "3.6")
 set(COLMAP_VERSION_NUMBER "3600")
 set(CMAKE_CXX_STANDARD 14)
 
+# lincong add
+if(MSVC)
+    add_definitions(-DSIFTGPU_NO_DEVIL)
+    add_definitions("-DVL_DISABLE_AVX")
+    add_definitions("-DVL_DISABLE_SSE2")
+endif()
+
 # set cmake cxx compiler and c compiler
 # set(CMAKE_C_COMPILER /usr/bin/gcc CACHE PATH "" FORCE)
 # set(CMAKE_CXX_COMPILER /usr/bin/g++ CACHE PATH "" FORCE)
@@ -75,11 +82,11 @@ if(TESTS_ENABLED)
     enable_testing()
 endif()
 
-if(BOOST_STATIC)
-    set(Boost_USE_STATIC_LIBS ON)
-else()
-    add_definitions("-DBOOST_TEST_DYN_LINK")
-endif()
+#if(BOOST_STATIC)
+#    set(Boost_USE_STATIC_LIBS ON)
+#else()
+#    add_definitions("-DBOOST_TEST_DYN_LINK")
+#endif()
 
 ################################################################################
 # Find packages
@@ -90,6 +97,8 @@ if(OPENMP_ENABLED)
 endif()
 
 find_package(Ceres REQUIRED)
+
+set(Boost_USE_STATIC_LIBS OFF)
 
 find_package(Boost REQUIRED COMPONENTS
              program_options
@@ -148,10 +157,10 @@ if(IS_MSVC)
     # Some fixes for the Glog library.
     add_definitions("-DGLOG_NO_ABBREVIATED_SEVERITIES")
     add_definitions("-DGL_GLEXT_PROTOTYPES")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /EHsc /FS")
     # Enable object level parallel builds in Visual Studio.
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /MP")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /FS /MP /bigobj /wd4273 /wd4005 /wd4996 /wd4819 /wd4251 /wd4267 /wd4244 /wd4275 /wd4530 /wd4334 /wd4018")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /FS /MP /bigobj /wd4273 /wd4005 /wd4996 /wd4819 /wd4251 /wd4267 /wd4244 /wd4275 /wd4530 /wd4334 /wd4018")
 endif()
 
 if(IS_GNU)
@@ -269,6 +278,7 @@ set(COLMAP_INCLUDE_DIRS
     ${Qt5Core_INCLUDE_DIRS}
     ${Qt5OpenGL_INCLUDE_DIRS}
     ${Qt5Widgets_INCLUDE_DIRS}
+    ${CUDA_INCLUDE_DIRS}
 )
 
 set(COLMAP_LINK_DIRS

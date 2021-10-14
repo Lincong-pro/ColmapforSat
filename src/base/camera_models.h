@@ -1,32 +1,42 @@
 // ===============================================================================================================
 // Copyright (c) 2019, Cornell University. All rights reserved.
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that
-// the following conditions are met:
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
 //
-//     * Redistributions of source code must retain the above copyright otice, this list of conditions and
+//     * Redistributions of source code must retain the above copyright otice,
+//     this list of conditions and
 //       the following disclaimer.
 //
-//     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
-//       the following disclaimer in the documentation and/or other materials provided with the distribution.
-//       
-//     * Neither the name of Cornell University nor the names of its contributors may be used to endorse or
-//       promote products derived from this software without specific prior written permission.
+//     * Redistributions in binary form must reproduce the above copyright
+//     notice, this list of conditions and
+//       the following disclaimer in the documentation and/or other materials
+//       provided with the distribution.
 //
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED 
-// WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-// TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
-// OF SUCH DAMAGE.
+//     * Neither the name of Cornell University nor the names of its
+//     contributors may be used to endorse or
+//       promote products derived from this software without specific prior
+//       written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
 //
 // Author: Kai Zhang (kz298@cornell.edu)
 //
-// The research is based upon work supported by the Office of the Director of National Intelligence (ODNI),     
-// Intelligence Advanced Research Projects Activity (IARPA), via DOI/IBC Contract Number D17PC00287.            
-// The U.S. Government is authorized to reproduce and distribute copies of this work for Governmental purposes. 
+// The research is based upon work supported by the Office of the Director of
+// National Intelligence (ODNI), Intelligence Advanced Research Projects
+// Activity (IARPA), via DOI/IBC Contract Number D17PC00287. The U.S. Government
+// is authorized to reproduce and distribute copies of this work for
+// Governmental purposes.
 // ===============================================================================================================
 //
 //
@@ -138,74 +148,71 @@ static const int kInvalidCameraModelId = -1;
       const double focal_length, const size_t width, const size_t height);     \
                                                                                \
   template <typename T>                                                        \
-  static void WorldToImage(const T* params, const T u, const T v, T* x, T* y); \
+  static void WorldToImage(const T *params, const T u, const T v, T *x, T *y); \
   template <typename T>                                                        \
-  static void ImageToWorld(const T* params, const T x, const T y, T* u, T* v); \
+  static void ImageToWorld(const T *params, const T x, const T y, T *u, T *v); \
   template <typename T>                                                        \
-  static void Distortion(const T* extra_params, const T u, const T v, T* du,   \
-                         T* dv);
+  static void Distortion(const T *extra_params, const T u, const T v, T *du,   \
+                         T *dv);
 #endif
 
 #ifndef CAMERA_MODEL_CASES
-#define CAMERA_MODEL_CASES                          \
-  CAMERA_MODEL_CASE(SimplePinholeCameraModel)       \
-  CAMERA_MODEL_CASE(PinholeCameraModel)             \
-  CAMERA_MODEL_CASE(SimpleRadialCameraModel)        \
-  CAMERA_MODEL_CASE(SimpleRadialFisheyeCameraModel) \
-  CAMERA_MODEL_CASE(RadialCameraModel)              \
-  CAMERA_MODEL_CASE(RadialFisheyeCameraModel)       \
-  CAMERA_MODEL_CASE(OpenCVCameraModel)              \
-  CAMERA_MODEL_CASE(OpenCVFisheyeCameraModel)       \
-  CAMERA_MODEL_CASE(FullOpenCVCameraModel)          \
-  CAMERA_MODEL_CASE(FOVCameraModel)                 \
-  CAMERA_MODEL_CASE(ThinPrismFisheyeCameraModel)	\
+#define CAMERA_MODEL_CASES                                                     \
+  CAMERA_MODEL_CASE(SimplePinholeCameraModel)                                  \
+  CAMERA_MODEL_CASE(PinholeCameraModel)                                        \
+  CAMERA_MODEL_CASE(SimpleRadialCameraModel)                                   \
+  CAMERA_MODEL_CASE(SimpleRadialFisheyeCameraModel)                            \
+  CAMERA_MODEL_CASE(RadialCameraModel)                                         \
+  CAMERA_MODEL_CASE(RadialFisheyeCameraModel)                                  \
+  CAMERA_MODEL_CASE(OpenCVCameraModel)                                         \
+  CAMERA_MODEL_CASE(OpenCVFisheyeCameraModel)                                  \
+  CAMERA_MODEL_CASE(FullOpenCVCameraModel)                                     \
+  CAMERA_MODEL_CASE(FOVCameraModel)                                            \
+  CAMERA_MODEL_CASE(ThinPrismFisheyeCameraModel)                               \
   CAMERA_MODEL_CASE(PerspectiveCameraModel)
 #endif
 
 #ifndef CAMERA_MODEL_SWITCH_CASES
-#define CAMERA_MODEL_SWITCH_CASES         \
-  CAMERA_MODEL_CASES                      \
-  default:                                \
-    CAMERA_MODEL_DOES_NOT_EXIST_EXCEPTION \
+#define CAMERA_MODEL_SWITCH_CASES                                              \
+  CAMERA_MODEL_CASES                                                           \
+  default:                                                                     \
+    CAMERA_MODEL_DOES_NOT_EXIST_EXCEPTION                                      \
     break;
 #endif
 
-#define CAMERA_MODEL_DOES_NOT_EXIST_EXCEPTION \
+#define CAMERA_MODEL_DOES_NOT_EXIST_EXCEPTION                                  \
   throw std::domain_error("Camera model does not exist");
 
 // The "Curiously Recurring Template Pattern" (CRTP) is used here, so that we
 // can reuse some shared functionality between all camera models -
 // defined in the BaseCameraModel.
-template <typename CameraModel>
-struct BaseCameraModel {
+template <typename CameraModel> struct BaseCameraModel {
   template <typename T>
-  static inline bool HasBogusParams(const std::vector<T>& params,
-                                    const size_t width, const size_t height,
-                                    const T min_focal_length_ratio,
-                                    const T max_focal_length_ratio,
-                                    const T max_extra_param);
+  static inline bool
+  HasBogusParams(const std::vector<T> &params, const size_t width,
+                 const size_t height, const T min_focal_length_ratio,
+                 const T max_focal_length_ratio, const T max_extra_param);
 
   template <typename T>
-  static inline bool HasBogusFocalLength(const std::vector<T>& params,
-                                         const size_t width,
-                                         const size_t height,
-                                         const T min_focal_length_ratio,
-                                         const T max_focal_length_ratio);
+  static inline bool
+  HasBogusFocalLength(const std::vector<T> &params, const size_t width,
+                      const size_t height, const T min_focal_length_ratio,
+                      const T max_focal_length_ratio);
 
   template <typename T>
-  static inline bool HasBogusPrincipalPoint(const std::vector<T>& params,
+  static inline bool HasBogusPrincipalPoint(const std::vector<T> &params,
                                             const size_t width,
                                             const size_t height);
 
   template <typename T>
-  static inline bool HasBogusExtraParams(const std::vector<T>& params,
+  static inline bool HasBogusExtraParams(const std::vector<T> &params,
                                          const T max_extra_param);
 
   template <typename T>
-  static inline T ImageToWorldThreshold(const T* params, const T threshold);
+  static inline T ImageToWorldThreshold(const T *params, const T threshold);
 
   template <typename T>
-  static inline void IterativeUndistortion(const T* params, T* u, T* v);
+  static inline void IterativeUndistortion(const T *params, T *u, T *v);
 };
 
 // Simple Pinhole camera model.
@@ -331,8 +338,8 @@ struct FOVCameraModel : public BaseCameraModel<FOVCameraModel> {
   CAMERA_MODEL_DEFINITIONS(7, "FOV", 5)
 
   template <typename T>
-  static void Undistortion(const T* extra_params, const T u, const T v, T* du,
-                           T* dv);
+  static void Undistortion(const T *extra_params, const T u, const T v, T *du,
+                           T *dv);
 };
 
 // Simple camera model with one focal length and one radial distortion
@@ -386,14 +393,12 @@ struct ThinPrismFisheyeCameraModel
 // full perspective camera with skew parameter
 // Parameter list is expected in the following order:
 // fx, fy, cx, cy, s
-struct PerspectiveCameraModel
-	: public BaseCameraModel<PerspectiveCameraModel> {
+struct PerspectiveCameraModel : public BaseCameraModel<PerspectiveCameraModel> {
   CAMERA_MODEL_DEFINITIONS(11, "PERSPECTIVE", 5)
 };
 
-
 // Check whether camera model with given name or identifier exists.
-bool ExistsCameraModelWithName(const std::string& model_name);
+bool ExistsCameraModelWithName(const std::string &model_name);
 bool ExistsCameraModelWithId(const int model_id);
 
 // Convert camera name to unique camera model identifier.
@@ -401,7 +406,7 @@ bool ExistsCameraModelWithId(const int model_id);
 // @param name         Unique name of camera model.
 //
 // @return             Unique identifier of camera model.
-int CameraModelNameToId(const std::string& model_name);
+int CameraModelNameToId(const std::string &model_name);
 
 // Convert camera model identifier to unique camera model name.
 //
@@ -432,9 +437,9 @@ std::string CameraModelParamsInfo(const int model_id);
 // Get the indices of the parameter groups in the parameter vector.
 //
 // @param model_id     Unique identifier of camera model.
-const std::vector<size_t>& CameraModelFocalLengthIdxs(const int model_id);
-const std::vector<size_t>& CameraModelPrincipalPointIdxs(const int model_id);
-const std::vector<size_t>& CameraModelExtraParamsIdxs(const int model_id);
+const std::vector<size_t> &CameraModelFocalLengthIdxs(const int model_id);
+const std::vector<size_t> &CameraModelPrincipalPointIdxs(const int model_id);
+const std::vector<size_t> &CameraModelExtraParamsIdxs(const int model_id);
 
 // Get the total number of parameters of a camera model.
 size_t CameraModelNumParams(const int model_id);
@@ -445,7 +450,7 @@ size_t CameraModelNumParams(const int model_id);
 // @param model_id      Unique identifier of camera model.
 // @param params        Array of camera parameters.
 bool CameraModelVerifyParams(const int model_id,
-                             const std::vector<double>& params);
+                             const std::vector<double> &params);
 
 // Check whether camera has bogus parameters.
 //
@@ -459,7 +464,7 @@ bool CameraModelVerifyParams(const int model_id,
 //                                maximum sensor dimension.
 // @param max_extra_param         Maximum magnitude of each extra parameter.
 bool CameraModelHasBogusParams(const int model_id,
-                               const std::vector<double>& params,
+                               const std::vector<double> &params,
                                const size_t width, const size_t height,
                                const double min_focal_length_ratio,
                                const double max_focal_length_ratio,
@@ -475,9 +480,9 @@ bool CameraModelHasBogusParams(const int model_id,
 // @param u, v         Coordinates in camera system as (u, v, 1).
 // @param x, y         Output image coordinates in pixels.
 inline void CameraModelWorldToImage(const int model_id,
-                                    const std::vector<double>& params,
-                                    const double u, const double v, double* x,
-                                    double* y);
+                                    const std::vector<double> &params,
+                                    const double u, const double v, double *x,
+                                    double *y);
 
 // Transform image coordinates to world coordinates in camera coordinate system.
 //
@@ -488,9 +493,9 @@ inline void CameraModelWorldToImage(const int model_id,
 // @param x, y          Image coordinates in pixels.
 // @param v, u          Output Coordinates in camera system as (u, v, 1).
 inline void CameraModelImageToWorld(const int model_id,
-                                    const std::vector<double>& params,
-                                    const double x, const double y, double* u,
-                                    double* v);
+                                    const std::vector<double> &params,
+                                    const double x, const double y, double *u,
+                                    double *v);
 
 // Convert pixel threshold in image plane to world space by dividing
 // the threshold through the mean focal length.
@@ -500,9 +505,10 @@ inline void CameraModelImageToWorld(const int model_id,
 // @param threshold     Image space threshold in pixels.
 //
 // @ return             World space threshold.
-inline double CameraModelImageToWorldThreshold(
-    const int model_id, const std::vector<double>& params,
-    const double threshold);
+inline double
+CameraModelImageToWorldThreshold(const int model_id,
+                                 const std::vector<double> &params,
+                                 const double threshold);
 
 ////////////////////////////////////////////////////////////////////////////////
 // Implementation
@@ -514,7 +520,7 @@ inline double CameraModelImageToWorldThreshold(
 template <typename CameraModel>
 template <typename T>
 bool BaseCameraModel<CameraModel>::HasBogusParams(
-    const std::vector<T>& params, const size_t width, const size_t height,
+    const std::vector<T> &params, const size_t width, const size_t height,
     const T min_focal_length_ratio, const T max_focal_length_ratio,
     const T max_extra_param) {
   // @kai
@@ -537,11 +543,11 @@ bool BaseCameraModel<CameraModel>::HasBogusParams(
 template <typename CameraModel>
 template <typename T>
 bool BaseCameraModel<CameraModel>::HasBogusFocalLength(
-    const std::vector<T>& params, const size_t width, const size_t height,
+    const std::vector<T> &params, const size_t width, const size_t height,
     const T min_focal_length_ratio, const T max_focal_length_ratio) {
   const size_t max_size = std::max(width, height);
 
-  for (const auto& idx : CameraModel::focal_length_idxs) {
+  for (const auto &idx : CameraModel::focal_length_idxs) {
     const T focal_length_ratio = params[idx] / max_size;
     if (focal_length_ratio < min_focal_length_ratio ||
         focal_length_ratio > max_focal_length_ratio) {
@@ -555,7 +561,7 @@ bool BaseCameraModel<CameraModel>::HasBogusFocalLength(
 template <typename CameraModel>
 template <typename T>
 bool BaseCameraModel<CameraModel>::HasBogusPrincipalPoint(
-    const std::vector<T>& params, const size_t width, const size_t height) {
+    const std::vector<T> &params, const size_t width, const size_t height) {
   const T cx = params[CameraModel::principal_point_idxs[0]];
   const T cy = params[CameraModel::principal_point_idxs[1]];
   return cx < 0 || cx > width || cy < 0 || cy > height;
@@ -564,8 +570,8 @@ bool BaseCameraModel<CameraModel>::HasBogusPrincipalPoint(
 template <typename CameraModel>
 template <typename T>
 bool BaseCameraModel<CameraModel>::HasBogusExtraParams(
-    const std::vector<T>& params, const T max_extra_param) {
-  for (const auto& idx : CameraModel::extra_params_idxs) {
+    const std::vector<T> &params, const T max_extra_param) {
+  for (const auto &idx : CameraModel::extra_params_idxs) {
     if (std::abs(params[idx]) > max_extra_param) {
       return true;
     }
@@ -576,10 +582,10 @@ bool BaseCameraModel<CameraModel>::HasBogusExtraParams(
 
 template <typename CameraModel>
 template <typename T>
-T BaseCameraModel<CameraModel>::ImageToWorldThreshold(const T* params,
+T BaseCameraModel<CameraModel>::ImageToWorldThreshold(const T *params,
                                                       const T threshold) {
   T mean_focal_length = 0;
-  for (const auto& idx : CameraModel::focal_length_idxs) {
+  for (const auto &idx : CameraModel::focal_length_idxs) {
     mean_focal_length += params[idx];
   }
   mean_focal_length /= CameraModel::focal_length_idxs.size();
@@ -588,8 +594,8 @@ T BaseCameraModel<CameraModel>::ImageToWorldThreshold(const T* params,
 
 template <typename CameraModel>
 template <typename T>
-void BaseCameraModel<CameraModel>::IterativeUndistortion(const T* params, T* u,
-                                                         T* v) {
+void BaseCameraModel<CameraModel>::IterativeUndistortion(const T *params, T *u,
+                                                         T *v) {
   // Parameters for Newton iteration using numerical differentiation with
   // central differences, 100 iterations should be enough even for complex
   // camera models with higher order terms.
@@ -656,8 +662,8 @@ std::vector<double> SimplePinholeCameraModel::InitializeParams(
 }
 
 template <typename T>
-void SimplePinholeCameraModel::WorldToImage(const T* params, const T u,
-                                            const T v, T* x, T* y) {
+void SimplePinholeCameraModel::WorldToImage(const T *params, const T u,
+                                            const T v, T *x, T *y) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -670,8 +676,8 @@ void SimplePinholeCameraModel::WorldToImage(const T* params, const T u,
 }
 
 template <typename T>
-void SimplePinholeCameraModel::ImageToWorld(const T* params, const T x,
-                                            const T y, T* u, T* v) {
+void SimplePinholeCameraModel::ImageToWorld(const T *params, const T x,
+                                            const T y, T *u, T *v) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -699,14 +705,15 @@ std::vector<size_t> PinholeCameraModel::InitializeExtraParamsIdxs() {
   return {};
 }
 
-std::vector<double> PinholeCameraModel::InitializeParams(
-    const double focal_length, const size_t width, const size_t height) {
+std::vector<double>
+PinholeCameraModel::InitializeParams(const double focal_length,
+                                     const size_t width, const size_t height) {
   return {focal_length, focal_length, width / 2.0, height / 2.0};
 }
 
 template <typename T>
-void PinholeCameraModel::WorldToImage(const T* params, const T u, const T v,
-                                      T* x, T* y) {
+void PinholeCameraModel::WorldToImage(const T *params, const T u, const T v,
+                                      T *x, T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -720,8 +727,8 @@ void PinholeCameraModel::WorldToImage(const T* params, const T u, const T v,
 }
 
 template <typename T>
-void PinholeCameraModel::ImageToWorld(const T* params, const T x, const T y,
-                                      T* u, T* v) {
+void PinholeCameraModel::ImageToWorld(const T *params, const T x, const T y,
+                                      T *u, T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -756,8 +763,8 @@ std::vector<double> SimpleRadialCameraModel::InitializeParams(
 }
 
 template <typename T>
-void SimpleRadialCameraModel::WorldToImage(const T* params, const T u,
-                                           const T v, T* x, T* y) {
+void SimpleRadialCameraModel::WorldToImage(const T *params, const T u,
+                                           const T v, T *x, T *y) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -774,8 +781,8 @@ void SimpleRadialCameraModel::WorldToImage(const T* params, const T u,
 }
 
 template <typename T>
-void SimpleRadialCameraModel::ImageToWorld(const T* params, const T x,
-                                           const T y, T* u, T* v) {
+void SimpleRadialCameraModel::ImageToWorld(const T *params, const T x,
+                                           const T y, T *u, T *v) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -788,8 +795,8 @@ void SimpleRadialCameraModel::ImageToWorld(const T* params, const T x,
 }
 
 template <typename T>
-void SimpleRadialCameraModel::Distortion(const T* extra_params, const T u,
-                                         const T v, T* du, T* dv) {
+void SimpleRadialCameraModel::Distortion(const T *extra_params, const T u,
+                                         const T v, T *du, T *dv) {
   const T k = extra_params[0];
 
   const T u2 = u * u;
@@ -819,19 +826,21 @@ std::vector<size_t> RadialCameraModel::InitializeExtraParamsIdxs() {
   return {3, 4};
 }
 
-std::vector<double> RadialCameraModel::InitializeParams(
-    const double focal_length, const size_t width, const size_t height) {
+std::vector<double>
+RadialCameraModel::InitializeParams(const double focal_length,
+                                    const size_t width, const size_t height) {
   return {focal_length, width / 2.0, height / 2.0, 0, 0};
 }
 
 template <typename T>
-void RadialCameraModel::WorldToImage(const T* params, const T u, const T v,
-                                     T* x, T* y) {
+void RadialCameraModel::WorldToImage(const T *params, const T u, const T v,
+                                     T *x, T *y) {
+  // world coordinate is stand for normolized camera coodinate
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
 
-  // Distortion
+  // Distortion,undistortion for normalized camera coordinate
   T du, dv;
   Distortion(&params[3], u, v, &du, &dv);
   *x = u + du;
@@ -843,13 +852,13 @@ void RadialCameraModel::WorldToImage(const T* params, const T u, const T v,
 }
 
 template <typename T>
-void RadialCameraModel::ImageToWorld(const T* params, const T x, const T y,
-                                     T* u, T* v) {
+void RadialCameraModel::ImageToWorld(const T *params, const T x, const T y,
+                                     T *u, T *v) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
 
-  // Lift points to normalized plane
+  // Lift points to normalized plane(影像纠正发生在归一化相机坐标的时候)
   *u = (x - c1) / f;
   *v = (y - c2) / f;
 
@@ -857,8 +866,8 @@ void RadialCameraModel::ImageToWorld(const T* params, const T x, const T y,
 }
 
 template <typename T>
-void RadialCameraModel::Distortion(const T* extra_params, const T u, const T v,
-                                   T* du, T* dv) {
+void RadialCameraModel::Distortion(const T *extra_params, const T u, const T v,
+                                   T *du, T *dv) {
   const T k1 = extra_params[0];
   const T k2 = extra_params[1];
 
@@ -889,14 +898,15 @@ std::vector<size_t> OpenCVCameraModel::InitializeExtraParamsIdxs() {
   return {4, 5, 6, 7};
 }
 
-std::vector<double> OpenCVCameraModel::InitializeParams(
-    const double focal_length, const size_t width, const size_t height) {
+std::vector<double>
+OpenCVCameraModel::InitializeParams(const double focal_length,
+                                    const size_t width, const size_t height) {
   return {focal_length, focal_length, width / 2.0, height / 2.0, 0, 0, 0, 0};
 }
 
 template <typename T>
-void OpenCVCameraModel::WorldToImage(const T* params, const T u, const T v,
-                                     T* x, T* y) {
+void OpenCVCameraModel::WorldToImage(const T *params, const T u, const T v,
+                                     T *x, T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -914,8 +924,8 @@ void OpenCVCameraModel::WorldToImage(const T* params, const T u, const T v,
 }
 
 template <typename T>
-void OpenCVCameraModel::ImageToWorld(const T* params, const T x, const T y,
-                                     T* u, T* v) {
+void OpenCVCameraModel::ImageToWorld(const T *params, const T x, const T y,
+                                     T *u, T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -929,8 +939,8 @@ void OpenCVCameraModel::ImageToWorld(const T* params, const T x, const T y,
 }
 
 template <typename T>
-void OpenCVCameraModel::Distortion(const T* extra_params, const T u, const T v,
-                                   T* du, T* dv) {
+void OpenCVCameraModel::Distortion(const T *extra_params, const T u, const T v,
+                                   T *du, T *dv) {
   const T k1 = extra_params[0];
   const T k2 = extra_params[1];
   const T p1 = extra_params[2];
@@ -970,8 +980,8 @@ std::vector<double> OpenCVFisheyeCameraModel::InitializeParams(
 }
 
 template <typename T>
-void OpenCVFisheyeCameraModel::WorldToImage(const T* params, const T u,
-                                            const T v, T* x, T* y) {
+void OpenCVFisheyeCameraModel::WorldToImage(const T *params, const T u,
+                                            const T v, T *x, T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -989,8 +999,8 @@ void OpenCVFisheyeCameraModel::WorldToImage(const T* params, const T u,
 }
 
 template <typename T>
-void OpenCVFisheyeCameraModel::ImageToWorld(const T* params, const T x,
-                                            const T y, T* u, T* v) {
+void OpenCVFisheyeCameraModel::ImageToWorld(const T *params, const T x,
+                                            const T y, T *u, T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1004,8 +1014,8 @@ void OpenCVFisheyeCameraModel::ImageToWorld(const T* params, const T x,
 }
 
 template <typename T>
-void OpenCVFisheyeCameraModel::Distortion(const T* extra_params, const T u,
-                                          const T v, T* du, T* dv) {
+void OpenCVFisheyeCameraModel::Distortion(const T *extra_params, const T u,
+                                          const T v, T *du, T *dv) {
   const T k1 = extra_params[0];
   const T k2 = extra_params[1];
   const T k3 = extra_params[2];
@@ -1065,8 +1075,8 @@ std::vector<double> FullOpenCVCameraModel::InitializeParams(
 }
 
 template <typename T>
-void FullOpenCVCameraModel::WorldToImage(const T* params, const T u, const T v,
-                                         T* x, T* y) {
+void FullOpenCVCameraModel::WorldToImage(const T *params, const T u, const T v,
+                                         T *x, T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1084,8 +1094,8 @@ void FullOpenCVCameraModel::WorldToImage(const T* params, const T u, const T v,
 }
 
 template <typename T>
-void FullOpenCVCameraModel::ImageToWorld(const T* params, const T x, const T y,
-                                         T* u, T* v) {
+void FullOpenCVCameraModel::ImageToWorld(const T *params, const T x, const T y,
+                                         T *u, T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1099,8 +1109,8 @@ void FullOpenCVCameraModel::ImageToWorld(const T* params, const T x, const T y,
 }
 
 template <typename T>
-void FullOpenCVCameraModel::Distortion(const T* extra_params, const T u,
-                                       const T v, T* du, T* dv) {
+void FullOpenCVCameraModel::Distortion(const T *extra_params, const T u,
+                                       const T v, T *du, T *dv) {
   const T k1 = extra_params[0];
   const T k2 = extra_params[1];
   const T p1 = extra_params[2];
@@ -1146,8 +1156,8 @@ std::vector<double> FOVCameraModel::InitializeParams(const double focal_length,
 }
 
 template <typename T>
-void FOVCameraModel::WorldToImage(const T* params, const T u, const T v, T* x,
-                                  T* y) {
+void FOVCameraModel::WorldToImage(const T *params, const T u, const T v, T *x,
+                                  T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1162,8 +1172,8 @@ void FOVCameraModel::WorldToImage(const T* params, const T u, const T v, T* x,
 }
 
 template <typename T>
-void FOVCameraModel::ImageToWorld(const T* params, const T x, const T y, T* u,
-                                  T* v) {
+void FOVCameraModel::ImageToWorld(const T *params, const T x, const T y, T *u,
+                                  T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1178,8 +1188,8 @@ void FOVCameraModel::ImageToWorld(const T* params, const T x, const T y, T* u,
 }
 
 template <typename T>
-void FOVCameraModel::Distortion(const T* extra_params, const T u, const T v,
-                                T* du, T* dv) {
+void FOVCameraModel::Distortion(const T *extra_params, const T u, const T v,
+                                T *du, T *dv) {
   const T omega = extra_params[0];
 
   // Chosen arbitrarily.
@@ -1217,8 +1227,8 @@ void FOVCameraModel::Distortion(const T* extra_params, const T u, const T v,
 }
 
 template <typename T>
-void FOVCameraModel::Undistortion(const T* extra_params, const T u, const T v,
-                                  T* du, T* dv) {
+void FOVCameraModel::Undistortion(const T *extra_params, const T u, const T v,
+                                  T *du, T *dv) {
   T omega = extra_params[0];
 
   // Chosen arbitrarily.
@@ -1281,8 +1291,8 @@ std::vector<double> SimpleRadialFisheyeCameraModel::InitializeParams(
 }
 
 template <typename T>
-void SimpleRadialFisheyeCameraModel::WorldToImage(const T* params, const T u,
-                                                  const T v, T* x, T* y) {
+void SimpleRadialFisheyeCameraModel::WorldToImage(const T *params, const T u,
+                                                  const T v, T *x, T *y) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -1299,8 +1309,8 @@ void SimpleRadialFisheyeCameraModel::WorldToImage(const T* params, const T u,
 }
 
 template <typename T>
-void SimpleRadialFisheyeCameraModel::ImageToWorld(const T* params, const T x,
-                                                  const T y, T* u, T* v) {
+void SimpleRadialFisheyeCameraModel::ImageToWorld(const T *params, const T x,
+                                                  const T y, T *u, T *v) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -1313,9 +1323,9 @@ void SimpleRadialFisheyeCameraModel::ImageToWorld(const T* params, const T x,
 }
 
 template <typename T>
-void SimpleRadialFisheyeCameraModel::Distortion(const T* extra_params,
-                                                const T u, const T v, T* du,
-                                                T* dv) {
+void SimpleRadialFisheyeCameraModel::Distortion(const T *extra_params,
+                                                const T u, const T v, T *du,
+                                                T *dv) {
   const T k = extra_params[0];
 
   const T r = ceres::sqrt(u * u + v * v);
@@ -1357,8 +1367,8 @@ std::vector<double> RadialFisheyeCameraModel::InitializeParams(
 }
 
 template <typename T>
-void RadialFisheyeCameraModel::WorldToImage(const T* params, const T u,
-                                            const T v, T* x, T* y) {
+void RadialFisheyeCameraModel::WorldToImage(const T *params, const T u,
+                                            const T v, T *x, T *y) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -1375,8 +1385,8 @@ void RadialFisheyeCameraModel::WorldToImage(const T* params, const T u,
 }
 
 template <typename T>
-void RadialFisheyeCameraModel::ImageToWorld(const T* params, const T x,
-                                            const T y, T* u, T* v) {
+void RadialFisheyeCameraModel::ImageToWorld(const T *params, const T x,
+                                            const T y, T *u, T *v) {
   const T f = params[0];
   const T c1 = params[1];
   const T c2 = params[2];
@@ -1389,8 +1399,8 @@ void RadialFisheyeCameraModel::ImageToWorld(const T* params, const T x,
 }
 
 template <typename T>
-void RadialFisheyeCameraModel::Distortion(const T* extra_params, const T u,
-                                          const T v, T* du, T* dv) {
+void RadialFisheyeCameraModel::Distortion(const T *extra_params, const T u,
+                                          const T v, T *du, T *dv) {
   const T k1 = extra_params[0];
   const T k2 = extra_params[1];
 
@@ -1400,8 +1410,7 @@ void RadialFisheyeCameraModel::Distortion(const T* extra_params, const T u,
     const T theta = ceres::atan(r);
     const T theta2 = theta * theta;
     const T theta4 = theta2 * theta2;
-    const T thetad =
-        theta * (T(1) + k1 * theta2 + k2 * theta4);
+    const T thetad = theta * (T(1) + k1 * theta2 + k2 * theta4);
     *du = u * thetad / r - u;
     *dv = v * thetad / r - v;
   } else {
@@ -1447,8 +1456,8 @@ std::vector<double> ThinPrismFisheyeCameraModel::InitializeParams(
 }
 
 template <typename T>
-void ThinPrismFisheyeCameraModel::WorldToImage(const T* params, const T u,
-                                               const T v, T* x, T* y) {
+void ThinPrismFisheyeCameraModel::WorldToImage(const T *params, const T u,
+                                               const T v, T *x, T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1478,8 +1487,8 @@ void ThinPrismFisheyeCameraModel::WorldToImage(const T* params, const T u,
 }
 
 template <typename T>
-void ThinPrismFisheyeCameraModel::ImageToWorld(const T* params, const T x,
-                                               const T y, T* u, T* v) {
+void ThinPrismFisheyeCameraModel::ImageToWorld(const T *params, const T x,
+                                               const T y, T *u, T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
@@ -1501,8 +1510,8 @@ void ThinPrismFisheyeCameraModel::ImageToWorld(const T* params, const T x,
 }
 
 template <typename T>
-void ThinPrismFisheyeCameraModel::Distortion(const T* extra_params, const T u,
-                                             const T v, T* du, T* dv) {
+void ThinPrismFisheyeCameraModel::Distortion(const T *extra_params, const T u,
+                                             const T v, T *du, T *dv) {
   const T k1 = extra_params[0];
   const T k2 = extra_params[1];
   const T p1 = extra_params[2];
@@ -1524,69 +1533,65 @@ void ThinPrismFisheyeCameraModel::Distortion(const T* extra_params, const T u,
   *dv = v * radial + T(2) * p2 * uv + p1 * (r2 + T(2) * v2) + sy1 * r2;
 }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 // Perspective Camera Model
 
 std::string PerspectiveCameraModel::InitializeParamsInfo() {
-	return "fx, fy, cx, cy, s";
+  return "fx, fy, cx, cy, s";
 }
 
 std::vector<size_t> PerspectiveCameraModel::InitializeFocalLengthIdxs() {
-	return {0, 1};
+  return {0, 1};
 }
 
 std::vector<size_t> PerspectiveCameraModel::InitializePrincipalPointIdxs() {
-	return {2, 3};
+  return {2, 3};
 }
 
 std::vector<size_t> PerspectiveCameraModel::InitializeExtraParamsIdxs() {
-	return {4};
+  return {4};
 }
 
 std::vector<double> PerspectiveCameraModel::InitializeParams(
     const double focal_length, const size_t width, const size_t height) {
-  return {focal_length,
-          focal_length,
-          width / 2.0,
-          height / 2.0,
-          0};
+  return {focal_length, focal_length, width / 2.0, height / 2.0, 0};
 }
 
 template <typename T>
-void PerspectiveCameraModel::WorldToImage(const T* params, const T u, const T v,
-                                         T* x, T* y) {
+void PerspectiveCameraModel::WorldToImage(const T *params, const T u, const T v,
+                                          T *x, T *y) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
   const T c2 = params[3];
-  const T s = params[4];  // skew parameter
+  const T s = params[4]; // skew parameter
 
-  // No Distortion
+  // No Distortion，似乎归一化相机平面坐标并没有进行纠正
 
   // Transform to image coordinates
-  *x = f1 * u + s * v + c1;   // skew effect is added here
+  *x = f1 * u + s * v + c1; // skew effect is added here
   *y = f2 * v + c2;
 }
 
 template <typename T>
-void PerspectiveCameraModel::ImageToWorld(const T* params, const T x, const T y,
-                                     T* u, T* v) {
+void PerspectiveCameraModel::ImageToWorld(const T *params, const T x, const T y,
+                                          T *u, T *v) {
   const T f1 = params[0];
   const T f2 = params[1];
   const T c1 = params[2];
   const T c2 = params[3];
-  const T s = params[4];  // skew parameter
+  const T s = params[4]; // skew parameter
 
   // Lift points to normalized plane
   *v = (y - c2) / f2;
-  *u = (x - c1 - s * *v) / f1;  // skew effect is added here
+  *u = (x - c1 - s * *v) / f1; // skew effect is added here
 
   // IterativeUndistortion(&params[5], u, v);
 }
 
-//template <typename T>
-//void PerspectiveCameraModel::Distortion(const T* extra_params, const T u, const T v,
+// template <typename T>
+// void PerspectiveCameraModel::Distortion(const T* extra_params, const T u,
+// const T v,
 //                                   T* du, T* dv) {
 //  const T k1 = extra_params[0];
 //  const T k2 = extra_params[1];
@@ -1602,16 +1607,15 @@ void PerspectiveCameraModel::ImageToWorld(const T* params, const T x, const T y,
 //  *dv = v * radial + T(2) * p2 * uv + p1 * (r2 + T(2) * v2);
 //}
 
-
 ////////////////////////////////////////////////////////////////////////////////
 
 void CameraModelWorldToImage(const int model_id,
-                             const std::vector<double>& params, const double u,
-                             const double v, double* x, double* y) {
+                             const std::vector<double> &params, const double u,
+                             const double v, double *x, double *y) {
   switch (model_id) {
-#define CAMERA_MODEL_CASE(CameraModel)                    \
-  case CameraModel::kModelId:                             \
-    CameraModel::WorldToImage(params.data(), u, v, x, y); \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    CameraModel::WorldToImage(params.data(), u, v, x, y);                      \
     break;
 
     CAMERA_MODEL_SWITCH_CASES
@@ -1621,12 +1625,12 @@ void CameraModelWorldToImage(const int model_id,
 }
 
 void CameraModelImageToWorld(const int model_id,
-                             const std::vector<double>& params, const double x,
-                             const double y, double* u, double* v) {
+                             const std::vector<double> &params, const double x,
+                             const double y, double *u, double *v) {
   switch (model_id) {
-#define CAMERA_MODEL_CASE(CameraModel)                    \
-  case CameraModel::kModelId:                             \
-    CameraModel::ImageToWorld(params.data(), x, y, u, v); \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    CameraModel::ImageToWorld(params.data(), x, y, u, v);                      \
     break;
 
     CAMERA_MODEL_SWITCH_CASES
@@ -1636,12 +1640,12 @@ void CameraModelImageToWorld(const int model_id,
 }
 
 double CameraModelImageToWorldThreshold(const int model_id,
-                                        const std::vector<double>& params,
+                                        const std::vector<double> &params,
                                         const double threshold) {
   switch (model_id) {
-#define CAMERA_MODEL_CASE(CameraModel)                                   \
-  case CameraModel::kModelId:                                            \
-    return CameraModel::ImageToWorldThreshold(params.data(), threshold); \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    return CameraModel::ImageToWorldThreshold(params.data(), threshold);       \
     break;
 
     CAMERA_MODEL_SWITCH_CASES
@@ -1652,6 +1656,6 @@ double CameraModelImageToWorldThreshold(const int model_id,
   return -1;
 }
 
-}  // namespace colmap
+} // namespace colmap
 
-#endif  // COLMAP_SRC_BASE_CAMERA_MODELS_H_
+#endif // COLMAP_SRC_BASE_CAMERA_MODELS_H_

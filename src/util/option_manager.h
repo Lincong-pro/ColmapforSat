@@ -35,8 +35,8 @@
 #include <memory>
 
 #include <boost/program_options.hpp>
-
 #include "util/logging.h"
+
 
 namespace colmap {
 

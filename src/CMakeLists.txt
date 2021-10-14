@@ -31,7 +31,7 @@
 
 if(IS_MSVC)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /W3")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W3 /std:c++14")
 elseif(IS_GNU OR IS_CLANG)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -Wall")

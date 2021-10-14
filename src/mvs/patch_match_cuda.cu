@@ -1730,7 +1730,12 @@ void PatchMatchCuda::InitTransforms() {
   // Upload P, inv_P, C for source images
   //////////////////////////////////////////////////////////////////////////////
   const size_t kNumTformParams = 16 + 16 + 3;
-  float poses_host_data[kNumTformParams * problem_.src_image_idxs.size()];
+
+  float* poses_host_data=new float[kNumTformParams * problem_.src_image_idxs.size()];
+
+  for (int var = 0; var < kNumTformParams * problem_.src_image_idxs.size(); ++var) {
+      poses_host_data[var]=0;
+  }
 
   int offset = 0;
   for (const auto image_idx : problem_.src_image_idxs) {
@@ -1757,7 +1762,7 @@ void PatchMatchCuda::InitTransforms() {
   poses_device_.reset(new CudaArrayWrapper<float>(
       kNumTformParams, problem_.src_image_idxs.size(), 1));
   poses_device_->CopyToDevice(poses_host_data);
-
+  delete[] poses_host_data;
   poses_texture.addressMode[0] = cudaAddressModeBorder;
   poses_texture.addressMode[1] = cudaAddressModeBorder;
   poses_texture.addressMode[2] = cudaAddressModeBorder;
