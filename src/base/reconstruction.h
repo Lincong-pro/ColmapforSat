@@ -271,6 +271,7 @@ class Reconstruction {
   double ComputeMeanObservationsPerRegImage() const;
   double ComputeMeanReprojectionError() const;
 
+  // @lin 更新重投影误差
   // @kai
   // update reproj. error for each 3D point
   void UpdateReprojErr();
@@ -354,10 +355,12 @@ class Reconstruction {
 
   const CorrespondenceGraph* correspondence_graph_;
 
+  // @lin comment 添加所有的参数 intrinsics extrinsics points3D
   EIGEN_STL_UMAP(camera_t, class Camera) cameras_;
   EIGEN_STL_UMAP(image_t, class Image) images_;
   EIGEN_STL_UMAP(point3D_t, class Point3D) points3D_;
-  std::unordered_map<image_pair_t, std::pair<size_t, size_t>> image_pairs_;
+  std::unordered_map<image_pair_t, std::pair<size_t, size_t>> image_pairs_;// 匹配的所有像对，每个像对有一个特殊的id
+
 
   // { image_id, ... } where `images_.at(image_id).registered == true`.
   std::vector<image_t> reg_image_ids_;
@@ -402,6 +405,7 @@ const std::pair<size_t, size_t>& Reconstruction::ImagePair(
   const auto pair_id = Database::ImagePairToPairId(image_id1, image_id2);
   return image_pairs_.at(pair_id);
 }
+
 
 class Camera& Reconstruction::Camera(const camera_t camera_id) {
   return cameras_.at(camera_id);

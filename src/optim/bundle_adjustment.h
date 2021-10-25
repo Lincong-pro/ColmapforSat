@@ -101,11 +101,13 @@ struct BundleAdjustmentOptions {
   // Whether to print a final summary.
   bool print_summary = true;
 
+  //@lin BA_config用于配置是否对三维点进行一个soft constraint
+  //@kai
   // whether to add soft constraint on 3D points
-  bool constrain_points = false;
-  LossFunctionType constrain_points_loss = LossFunctionType::TRIVIAL;
-  double constrain_points_loss_scale = 1.0;
-  double constrain_points_loss_weight = 1.0;
+  bool constrain_points = false;//默认情况是不开启三维点的限制的
+  LossFunctionType constrain_points_loss = LossFunctionType::TRIVIAL;//设置loss fucntion的类型为trivial
+  double constrain_points_loss_scale = 1.0;//限制的缩放尺度是1.0
+  double constrain_points_loss_weight = 1.0;//限制的权重是1.0,本次论文中设置的为0.01
 
   // Ceres-Solver options.
   ceres::Solver::Options solver_options;
@@ -128,6 +130,8 @@ struct BundleAdjustmentOptions {
   // Create a new loss function based on the specified options. The caller
   // takes ownership of the loss function.
   ceres::LossFunction* CreateLossFunction() const;
+  //@lin 创建三维点限制的loss函数
+  //@kai
   ceres::LossFunction* CreateConstrainPointsLossFunction() const;
 
   bool Check() const;
@@ -229,6 +233,8 @@ class BundleAdjuster {
   void AddPointToProblem(const point3D_t point3D_id,
                          Reconstruction* reconstruction,
                          ceres::LossFunction* loss_function);
+  // @lin 添加带有限制的三维点到Problem区块中
+  // @kai
   // add constrained point to problem
   void AddConstrainedPointToProblem(const point3D_t point3D_id,
 		                 Reconstruction* reconstruction,

@@ -289,6 +289,8 @@ class RelativePoseCostFunction {
   const double y2_;
 };
 
+//@lin 对三维点添加一个soft constraint，目的是让平差前后的偏差不会太多
+//@kai
 // cost function that put a soft constraint on the 3D points
 // so that it does not deviate too much from the specified coordinates
 class Point3DCostFunction {

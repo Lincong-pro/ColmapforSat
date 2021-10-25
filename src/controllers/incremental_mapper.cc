@@ -197,16 +197,25 @@ IncrementalMapper::Options IncrementalMapperOptions::Mapper() const {
   options.local_ba_num_images = ba_local_num_images;
   return options;
 }
-
-IncrementalTriangulator::Options IncrementalMapperOptions::Triangulation()
-    const {
+/**
+ * @brief 返回三角测量的配置项
+ * @param-in
+ * @param-out
+ * @author lincong comment
+ */
+IncrementalTriangulator::Options IncrementalMapperOptions::Triangulation() const {
   IncrementalTriangulator::Options options = triangulation;
   options.min_focal_length_ratio = min_focal_length_ratio;
   options.max_focal_length_ratio = max_focal_length_ratio;
   options.max_extra_param = max_extra_param;
   return options;
 }
-
+/**
+ * @brief 局部光束法平差
+ * @param-in
+ * @param-out
+ * @author lincong comment
+ */
 BundleAdjustmentOptions IncrementalMapperOptions::LocalBundleAdjustment()
     const {
   BundleAdjustmentOptions options;
@@ -229,7 +238,12 @@ BundleAdjustmentOptions IncrementalMapperOptions::LocalBundleAdjustment()
       BundleAdjustmentOptions::LossFunctionType::SOFT_L1;
   return options;
 }
-
+/**
+ * @brief 全局光束法平差配置项
+ * @param-in
+ * @param-out
+ * @author lincong comment
+ */
 BundleAdjustmentOptions IncrementalMapperOptions::GlobalBundleAdjustment()
     const {
   BundleAdjustmentOptions options;

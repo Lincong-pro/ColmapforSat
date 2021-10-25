@@ -82,6 +82,7 @@ namespace colmap {
 // BundleAdjustmentOptions
 ////////////////////////////////////////////////////////////////////////////////
 
+//BA的loss函数
 ceres::LossFunction* BundleAdjustmentOptions::CreateLossFunction() const {
   ceres::LossFunction* loss_function = nullptr;
   switch (loss_function_type) {
@@ -104,7 +105,7 @@ ceres::LossFunction* BundleAdjustmentOptions::CreateConstrainPointsLossFunction(
 	  switch (constrain_points_loss) {
 	    case LossFunctionType::TRIVIAL:
 	      loss_function = new ceres::ScaledLoss(new ceres::TrivialLoss(), constrain_points_loss_weight,
-	    		  ceres::TAKE_OWNERSHIP);
+                  ceres::TAKE_OWNERSHIP);//设置一个带有权值比例的loss函数，不参杂缩放量
 	      break;
 	    case LossFunctionType::SOFT_L1:
 	      loss_function = new ceres::ScaledLoss(new ceres::SoftLOneLoss(constrain_points_loss_scale), constrain_points_loss_weight,
@@ -279,7 +280,8 @@ void BundleAdjustmentConfig::AddConstantPoint(const point3D_t point3D_id) {
   CHECK(!HasVariablePoint(point3D_id));
   constant_point3D_ids_.insert(point3D_id);
 }
-
+//@lin 在此处他增加了一个三维点的限制，即对于添加到bundle_adjustment_config中的配置选项的物方三维点的集合进行一个限制
+//@kai add
 void BundleAdjustmentConfig::AddConstrainedPoint(const point3D_t point3D_id) {
    CHECK(!HasConstrainedPoint(point3D_id));
    constrained_point3D_ids_.insert(point3D_id);
@@ -310,7 +312,8 @@ void BundleAdjustmentConfig::RemoveVariablePoint(const point3D_t point3D_id) {
 void BundleAdjustmentConfig::RemoveConstantPoint(const point3D_t point3D_id) {
   constant_point3D_ids_.erase(point3D_id);
 }
-
+//@lin 移除三维点的限制
+//@kai
 void BundleAdjustmentConfig::RemoveConstrainedPoint(const point3D_t point3D_id) {
   constrained_point3D_ids_.erase(point3D_id);
 }
@@ -546,12 +549,13 @@ void BundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
                                point3D.XYZ().data(), camera.ParamsData());
   }
 }
-
+//@lin 添加限制点到平差区块中
+//@kai
 void BundleAdjuster::AddConstrainedPointToProblem(const point3D_t point3D_id,
                                        Reconstruction* reconstruction,
                                        ceres::LossFunction* loss_function) {
   Point3D& point3D = reconstruction->Point3D(point3D_id);
-
+  // 创建一个三维点的结构体用于求解三维点的loss值
   ceres::CostFunction* cost_function = Point3DCostFunction::Create(point3D.XYZ());
 
   problem_->AddResidualBlock(cost_function, loss_function, point3D.XYZ().data());

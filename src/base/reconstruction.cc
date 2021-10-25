@@ -184,18 +184,18 @@ void Reconstruction::TearDown() {
     point3D.second.Track().Compress();
   }
 }
-
+// @lin 读取内方位元素矩阵
 void Reconstruction::AddCamera(const class Camera& camera) {
   CHECK(!ExistsCamera(camera.CameraId()));
   CHECK(camera.VerifyParams());
   cameras_.emplace(camera.CameraId(), camera);
 }
-
+// @lin 读取外方位元素
 void Reconstruction::AddImage(const class Image& image) {
   CHECK(!ExistsImage(image.ImageId()));
   images_[image.ImageId()] = image;
 }
-
+// @lin 添加三维点信息
 point3D_t Reconstruction::AddPoint3D(const Eigen::Vector3d& xyz,
                                      const Track& track,
                                      const Eigen::Vector3ub& color) {
@@ -204,9 +204,9 @@ point3D_t Reconstruction::AddPoint3D(const Eigen::Vector3d& xyz,
 
   class Point3D& point3D = points3D_[point3D_id];
 
-  point3D.SetXYZ(xyz);
-  point3D.SetTrack(track);
-  point3D.SetColor(color);
+  point3D.SetXYZ(xyz);      //添加xyz坐标
+  point3D.SetTrack(track);  //添加到track之中
+  point3D.SetColor(color);  //设置点云的颜色
 
   for (const auto& track_el : track.Elements()) {
     class Image& image = Image(track_el.image_id);
@@ -224,17 +224,17 @@ point3D_t Reconstruction::AddPoint3D(const Eigen::Vector3d& xyz,
 
   return point3D_id;
 }
-
+// @lin 添加观测方程 3D点->3D点对应的二维点
 void Reconstruction::AddObservation(const point3D_t point3D_id,
                                     const TrackElement& track_el) {
-  class Image& image = Image(track_el.image_id);
+  class Image& image = Image(track_el.image_id);//通过TrackElement获取三维点对应的相机的内方位元素
   CHECK(!image.Point2D(track_el.point2D_idx).HasPoint3D());
 
-  image.SetPoint3DForPoint2D(track_el.point2D_idx, point3D_id);
+  image.SetPoint3DForPoint2D(track_el.point2D_idx, point3D_id);//设置两者的像点和物点的对应关系
   CHECK_LE(image.NumPoints3D(), image.NumPoints2D());
 
   class Point3D& point3D = Point3D(point3D_id);
-  point3D.Track().AddElement(track_el);
+  point3D.Track().AddElement(track_el);// 设置该物方点的track
 
   const bool kIsContinuedPoint3D = true;
   SetObservationAsTriangulated(track_el.image_id, track_el.point2D_idx,
@@ -793,6 +793,7 @@ double Reconstruction::ComputeMeanReprojectionError() const {
   }
 }
 
+// @lin comment从不使用二进制文件，因为其不是二进制文件不直观
 // @kai never use the binary format that is not very intuitive
 void Reconstruction::Read(const std::string& path) {
 //   if (ExistsFile(JoinPaths(path, "cameras.bin")) &&
@@ -806,7 +807,7 @@ void Reconstruction::Read(const std::string& path) {
 //   } else {
 //     LOG(FATAL) << "cameras, images, points3D files do not exist at " << path;
 //   }
-    
+
   if (ExistsFile(JoinPaths(path, "cameras.txt")) &&
              ExistsFile(JoinPaths(path, "images.txt")) &&
              ExistsFile(JoinPaths(path, "points3D.txt"))) {
@@ -816,15 +817,17 @@ void Reconstruction::Read(const std::string& path) {
   }
 }
 
+// @lin 写入文本参数
 // @kai
 void Reconstruction::Write(const std::string& path) const { WriteText(path); }
 
+// @lin comment 读取相机内外参数以及3D点参数(是一种统一的参数)
 void Reconstruction::ReadText(const std::string& path) {
   ReadCamerasText(JoinPaths(path, "cameras.txt"));
   ReadImagesText(JoinPaths(path, "images.txt"));
   ReadPoints3DText(JoinPaths(path, "points3D.txt"));
 }
-
+// @lin comment 读取二进制文件
 void Reconstruction::ReadBinary(const std::string& path) {
   ReadCamerasBinary(JoinPaths(path, "cameras.bin"));
   ReadImagesBinary(JoinPaths(path, "images.bin"));
@@ -842,7 +845,7 @@ void Reconstruction::WriteBinary(const std::string& path) const {
   WriteImagesBinary(JoinPaths(path, "images.bin"));
   WritePoints3DBinary(JoinPaths(path, "points3D.bin"));
 }
-
+// @lin comment 转换到PLY文件
 std::vector<PlyPoint> Reconstruction::ConvertToPLY() const {
   std::vector<PlyPoint> ply_points;
   ply_points.reserve(points3D_.size());
@@ -1390,6 +1393,7 @@ size_t Reconstruction::FilterPoints3DWithLargeReprojectionError(
   return num_filtered;
 }
 
+// @lin 获取每一个三维点所对应的track的反投影的平均几何误差
 // @kai
 void Reconstruction::UpdateReprojErr() {
 	const std::unordered_set<point3D_t>& point3D_ids = this->Point3DIds();
@@ -1412,7 +1416,8 @@ void Reconstruction::UpdateReprojErr() {
 	    point3D.SetError(reproj_error_sum / point3D.Track().Length());
 	}
 }
-
+// @lin 读取相机文本，按照固定的格式进行读取
+/// ID MODEL WIDTH HEIGHT PARAMS(fx fy cx cy s)
 void Reconstruction::ReadCamerasText(const std::string& path) {
   cameras_.clear();
 
@@ -1428,7 +1433,7 @@ void Reconstruction::ReadCamerasText(const std::string& path) {
     if (line.empty() || line[0] == '#') {
       continue;
     }
-
+    // 使用C++文本流读取字符串
     std::stringstream line_stream(line);
 
     class Camera camera;

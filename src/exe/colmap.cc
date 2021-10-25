@@ -1289,17 +1289,19 @@ int RunSequentialMatcher(int argc, char** argv) {
   return EXIT_SUCCESS;
 }
 
+// 计算完相机相对姿态之后开始进行物方三角点的测量
 int RunPointTriangulator(int argc, char** argv) {
   std::string input_path;
   std::string output_path;
 
   OptionManager options;
-  options.AddDatabaseOptions();
-  options.AddImageOptions();
+  options.AddDatabaseOptions();// database file
+  options.AddImageOptions();// iamges info
+  // required option
   options.AddRequiredOption("input_path", &input_path);
   options.AddRequiredOption("output_path", &output_path);
-  options.AddMapperOptions();
-  options.Parse(argc, argv);
+  options.AddMapperOptions();// some configurations to Point triangulator stage
+  options.Parse(argc, argv);//start to parse
 
   if (!ExistsDir(input_path)) {
     std::cerr << "ERROR: `input_path` is not a directory" << std::endl;
@@ -1329,18 +1331,18 @@ int RunPointTriangulator(int argc, char** argv) {
     std::cout << std::endl;
     timer.PrintMinutes();
   }
-
+  // @lin Comment获取缓存database文件中的状态字符串
   // @kai
   std::string stats = database_cache.GetStatsString();
-
   std::cout << std::endl;
 
   Reconstruction reconstruction;
-  reconstruction.Read(input_path);
-
+  reconstruction.Read(input_path);//读取所有的intrinsics extrinsics point3D等等
+  // 影像数量不能低于2张
   CHECK_GE(reconstruction.NumRegImages(), 2)
       << "Need at least two images for triangulation";
 
+  // 对database中的内容进行mapper
   IncrementalMapper mapper(&database_cache);
   mapper.BeginReconstruction(&reconstruction);
 
@@ -1356,7 +1358,7 @@ int RunPointTriangulator(int argc, char** argv) {
     PrintHeading1("Triangulating image #" + std::to_string(image_id));
 
     const size_t num_existing_points3D = image.NumPoints3D();
-
+    // Print the number of 3D points
     std::cout << "  => Image has " << num_existing_points3D << " / "
               << image.NumObservations() << " points" << std::endl;
 
@@ -1936,7 +1938,7 @@ int ShowHelp(
 
 int main(int argc, char** argv) {
   InitializeGlog(argv);
-
+  // colmap的所有选项
   std::vector<std::pair<std::string, command_func_t>> commands;
   commands.emplace_back("gui", &RunGraphicalUserInterface);
   commands.emplace_back("automatic_reconstructor", &RunAutomaticReconstructor);

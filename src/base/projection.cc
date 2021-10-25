@@ -127,6 +127,7 @@ double CalculateSquaredReprojectionError(const Eigen::Vector2d& point2D,
   return (proj_point2D - point2D).squaredNorm();
 }
 
+// @lin计算重投影误差
 double CalculateSquaredReprojectionError(const Eigen::Vector2d& point2D,
                                          const Eigen::Vector3d& point3D,
                                          const Eigen::Matrix3x4d& proj_matrix,
@@ -144,7 +145,7 @@ double CalculateSquaredReprojectionError(const Eigen::Vector2d& point2D,
 
   const Eigen::Vector2d proj_point2D = camera.WorldToImage(
       Eigen::Vector2d(inv_proj_z * proj_x, inv_proj_z * proj_y));
-
+  // 比较两个二维点之间的几何误差（二维范数）
   return (proj_point2D - point2D).squaredNorm();
 }
 
