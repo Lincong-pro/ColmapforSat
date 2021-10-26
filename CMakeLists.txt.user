@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 5.0.0, 2021-10-15T16:35:54. -->
+<!-- Written by QtCreator 4.13.1, 2021-10-26T13:07:27. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
-  <value type="QByteArray">{3ed59b4e-9023-409d-a6f3-b5f63f872655}</value>
+  <value type="QByteArray">{e2807bc0-48d5-4bcd-9e6d-bf36418cb750}</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
@@ -37,7 +37,6 @@
    <value type="bool" key="EditorConfiguration.MouseHiding">true</value>
    <value type="bool" key="EditorConfiguration.MouseNavigation">true</value>
    <value type="int" key="EditorConfiguration.PaddingMode">1</value>
-   <value type="bool" key="EditorConfiguration.PreferSingleLineComments">false</value>
    <value type="bool" key="EditorConfiguration.ScrollWheelZooming">true</value>
    <value type="bool" key="EditorConfiguration.ShowMargin">false</value>
    <value type="int" key="EditorConfiguration.SmartBackspaceBehavior">0</value>
@@ -46,7 +45,6 @@
    <value type="int" key="EditorConfiguration.TabKeyBehavior">0</value>
    <value type="int" key="EditorConfiguration.TabSize">8</value>
    <value type="bool" key="EditorConfiguration.UseGlobal">true</value>
-   <value type="bool" key="EditorConfiguration.UseIndenter">false</value>
    <value type="int" key="EditorConfiguration.Utf8BomBehavior">1</value>
    <value type="bool" key="EditorConfiguration.addFinalNewLine">true</value>
    <value type="bool" key="EditorConfiguration.cleanIndentation">true</value>
@@ -61,434 +59,434 @@
   <valuemap type="QVariantMap">
    <valuemap type="QVariantMap" key="AutoTest.ActiveFrameworks">
     <value type="bool" key="AutoTest.Framework.Boost">true</value>
-    <value type="bool" key="AutoTest.Framework.CTest">false</value>
     <value type="bool" key="AutoTest.Framework.Catch">true</value>
     <value type="bool" key="AutoTest.Framework.GTest">true</value>
     <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
     <value type="bool" key="AutoTest.Framework.QtTest">true</value>
    </valuemap>
    <valuemap type="QVariantMap" key="AutoTest.CheckStates">
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_database_test.cc:Master Test Suite">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_database_test.cc:TestAmbiguousMatch">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_database_test.cc:TestExactMatch">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_database_test.cc:TestInitialization">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestFOV">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestFullOpenCV">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestOpenCV">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestOpenCVFisheye">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestPinhole">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestRadial">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestRadialFisheye">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestSimplePinhole">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestSimpleRadial">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestSimpleRadialFisheye">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_models_test.cc:TestThinPrismFisheye">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestAddCamera">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestAddSnapshot">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestCheck">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestComputeAbsolutePose">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestComputeRelativePoses">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestComputeScale">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_rig_test.cc:TestEmpty">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestCalibrationMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestCameraId">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestFocalLength">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestHasBogusParams">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestImageToWorld">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestImageToWorldThreshold">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestInitializeWithId">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestInitializeWithName">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestModelId">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestParamIdxs">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestParams">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestParamsFromString">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestParamsInfo">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestParamsToString">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestPrincipalPoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestPriorFocalLength">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestRescale">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestVerifyParams">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestWidthHeight">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/camera_test.cc:TestWorldToImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/correspondence_graph_test.cc:TestDefault">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/correspondence_graph_test.cc:TestDuplicate">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/correspondence_graph_test.cc:TestOutOfBounds">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/correspondence_graph_test.cc:TestThreeView">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/correspondence_graph_test.cc:TestTwoView">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/cost_functions_test.cc:TestBundleAdjustmentConstantPoseCostFunction">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/cost_functions_test.cc:TestBundleAdjustmentCostFunction">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/cost_functions_test.cc:TestRelativePoseCostFunction">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/cost_functions_test.cc:TestRigBundleAdjustmentCostFunction">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_cache_test.cc:TestAddImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_cache_test.cc:TestDegenerateCamera">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestCamera">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestDescriptors">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestImagePairToPairId">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestKeypoints">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestMatches">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestOpenClose">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestOpenCloseConstructorDestructor">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestSwapImagePair">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestTransaction">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestTransactionMultiThreaded">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/database_test.cc:TestTwoViewGeometry">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestDecomposeEssentialMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestEpipoleFromEssentialMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestEssentialMatrixFromPose">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestEssentialMatrixFromPoses">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestFindOptimalImageObservations">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestInvertEssentialMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestPoseFromEssentialMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/essential_matrix_test.cc:TestRefineEssentialMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/gps_test.cc:TestEllToXYZGRS80">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/gps_test.cc:TestEllToXYZWGS84">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/gps_test.cc:TestXYZToEllToXYZ_GRS80">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/gps_test.cc:TestXYZToEllToXYZ_WGS84">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/gps_test.cc:TestXYZToEll_GRS80">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/gps_test.cc:TestXYZToEll_WGS84">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagner">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagnerDisconnected">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagnerDuplicateEdge">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagnerMissingVertex">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCut">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCutDisconnected">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCutDuplicateEdge">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCutMissingVertex">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestMinSTGraphCut1">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestMinSTGraphCut2">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/graph_cut_test.cc:TestMinSTGraphCut3">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/homography_matrix_test.cc:TestDecomposeHomographyMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/homography_matrix_test.cc:TestHomographyMatrixFromPosePlanarScene">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/homography_matrix_test.cc:TestHomographyMatrixFromPosePureRotation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/homography_matrix_test.cc:TestPoseFromHomographyMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestImageId">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestInverseProjectionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestName">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestNormalizeQvec">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestNumCorrespondences">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestNumObservations">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestNumPoints2D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestNumPoints3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestNumVisiblePoints3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestPoint3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestPoint3DVisibilityScore">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestPoints2D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestProjectionCenter">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestProjectionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestQvec">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestQvecPrior">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestRegistered">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestRotationMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestTvec">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestTvecPrior">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/image_test.cc:TestViewingDirection">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/line_test.cc:TestClassifyLineSegmentOrientations">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/line_test.cc:TestDetectLineSegments">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/point2d_test.cc:TestPoint3DId">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/point2d_test.cc:TestXY">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/point3d_test.cc:TestError">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/point3d_test.cc:TestRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/point3d_test.cc:TestTrack">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/point3d_test.cc:TestXYZ">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestEvaluatePolynomial">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindLinearPolynomialRoots">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindPolynomialRootsCompanionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindPolynomialRootsCompanionMatrixLinearQuadratic">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindPolynomialRootsCompanionMatrixZeroSolution">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindPolynomialRootsDurandKerner">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindPolynomialRootsDurandKernerLinearQuadratic">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindQuadraticPolynomialRootsComplex">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/polynomial_test.cc:TestFindQuadraticPolynomialRootsReal">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestAverageQuaternions">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestCalculateBaseline">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestCheckCheirality">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestComposeIdentityQuaternion">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestComputeRelativePose">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestConcatenatePoses">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestConcatenateQuaternions">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestCrossProductMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestEulerAnglesX">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestEulerAnglesY">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestEulerAnglesZ">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestInterpolatePose">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestInvertPose">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestInvertQuaternion">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestNormalizeQuaternion">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestPoseFromProjectionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestPoseFromProjectionParameters">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestQuaternionRotatePoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestQuaternionToRotationMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/pose_test.cc:TestRotationFromUnitVectors">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestCalculateAngularError">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestCalculateDepth">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestCalculateSquaredReprojectionError">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestComposeProjectionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestComputeClosestRotationMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestDecomposeProjectionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestHasPointPositiveDepth">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/projection_test.cc:TestInvertProjectionMatrix">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_manager_test.cc:TestAddGet">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_manager_test.cc:TestClear">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_manager_test.cc:TestDelete">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestAddObservation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestAddPoint3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestComputeMeanObservationsPerRegImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestComputeMeanReprojectionError">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestComputeMeanTrackLength">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestComputeNumObservations">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestDeleteObservation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestDeletePoint3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestFilterAllPoints">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestFilterImages">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestFilterObservationsWithNegativeDepth">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestFilterPoints3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestFilterPoints3DInImages">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestFindImageWithName">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestMergePoints3D">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestNormalize">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestRegisterImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/reconstruction_test.cc:TestTransform">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/scene_clustering_test.cc:TestOneLevel">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/scene_clustering_test.cc:TestOneOverlap">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/scene_clustering_test.cc:TestThreeLevels">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/scene_clustering_test.cc:TestThreeLevelsMultipleImages">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/scene_clustering_test.cc:TestTwoLevels">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/scene_clustering_test.cc:TestTwoOverlap">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/similarity_transform_test.cc:TestEstimation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/track_test.cc:TestAddElement">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/track_test.cc:TestCompress">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/track_test.cc:TestDeleteElement">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/track_test.cc:TestReserve">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/track_test.cc:TestSetElements">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/track_test.cc:TestTrackElement">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/triangulation_test.cc:TestCalculateTriangulationAngle">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/triangulation_test.cc:TestTriangulatePoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/undistortion_test.cc:TestRectifyStereoCameras">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/undistortion_test.cc:TestUndistortCamera">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/undistortion_test.cc:TestUndistortCameraBlankPixels">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/undistortion_test.cc:TestUndistortCameraNoBlankPixels">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/undistortion_test.cc:TestUndistortReconstruction">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/visibility_pyramid_test.cc:TestScore">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestDownsampleImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestIdenticalCameras">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestResampleImageBilinear">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestShiftedCameras">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestSmoothImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestWarpImageWithHomographyBetweenCamerasIdentity">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestWarpImageWithHomographyBetweenCamerasTransposed">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestWarpImageWithHomographyIdentity">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/base/warp_test.cc:TestWarpImageWithHomographyTransposed">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/absolute_pose_test.cc:TestEPNP">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/absolute_pose_test.cc:TestP3P">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/affine_transform_test.cc:TestAffineTransform">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/coordinate_frame_test.cc:TestEstimateGravityVectorFromImageOrientation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/coordinate_frame_test.cc:TestEstimateManhattanWorldFrame">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/essential_matrix_test.cc:TestEightPoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/essential_matrix_test.cc:TestFivePoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/fundamental_matrix_test.cc:TestSevenPoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/generalized_absolute_pose_test.cc:Estimate">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/homography_matrix_test.cc:TestEstimate">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/two_view_geometry_test.cc:TestInvert">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/utils_test.cc:TestCenterAndNormalizeImagePoints">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/estimators/utils_test.cc:TestComputeSquaredSampsonError">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestCreateSiftGPUMatcherCUDA">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestCreateSiftGPUMatcherOpenGL">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestExtractCovariantAffineDSPSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestExtractCovariantAffineSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestExtractCovariantDSPSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestExtractCovariantSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestExtractSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestExtractSiftFeaturesGPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestMatchGuidedSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestMatchGuidedSiftFeaturesGPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestMatchSiftFeaturesCPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestMatchSiftFeaturesCPUvsGPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/sift_test.cc:TestMatchSiftFeaturesGPU">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/types_test.cc:TestFeatureDescriptors">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/types_test.cc:TestFeatureKeypoints">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/types_test.cc:TestFeatureMatchHashing">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/types_test.cc:TestFeatureMatches">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/utils_test.cc:TestExtractTopScaleFeatures">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/utils_test.cc:TestFeatureDescriptorsToUnsignedByte">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/utils_test.cc:TestFeatureKeypointsToPointsVector">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/utils_test.cc:TestL1RootNormalizeFeatureDescriptors">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/feature/utils_test.cc:TestL2NormalizeFeatureDescriptors">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/consistency_graph_test.cc:TestFull">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/consistency_graph_test.cc:TestPartial">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/consistency_graph_test.cc:TestZero">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/depth_map_test.cc:TestDownsize">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/depth_map_test.cc:TestNonEmpty">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/depth_map_test.cc:TestToBitmap">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/mat_test.cc:TestFill">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/mvs/mat_test.cc:TestGetSet">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestConfigNumObservations">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestConstantExtraParam">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestConstantFocalLength">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestConstantPoints">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestConstantRigFourView">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestParallelReconstructionSupported">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestParallelTwoViewConstantIntrinsics">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestParallelTwoViewVariableIntrinsics">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestPartiallyContainedTracks">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestPartiallyContainedTracksForceToOptimizePoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestRigFourView">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestRigFourViewPartial">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestRigTwoView">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestTwoViewConstantCamera">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestVariableImage">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/bundle_adjustment_test.cc:TestVariablePrincipalPoint">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/combination_sampler_test.cc:TestEqualSamples">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/combination_sampler_test.cc:TestLessSamples">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/least_absolute_deviations_test.cc:TestOverDetermined">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/least_absolute_deviations_test.cc:TestUnderDetermined">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/least_absolute_deviations_test.cc:TestWellDetermined">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/loransac_test.cc:TestReport">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/loransac_test.cc:TestSimilarityTransform">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/progressive_sampler_test.cc:TestProgressive">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/ransac_test.cc:TestNumTrials">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/ransac_test.cc:TestOptions">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/support_measurement_test.cc:TestInlierSupportMeasuremer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/optim/support_measurement_test.cc:TestMEstimatorSupportMeasurer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/retrieval/geometry_test.cc:TestIdentity">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/retrieval/geometry_test.cc:TestOrientation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/retrieval/geometry_test.cc:TestScale">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/retrieval/geometry_test.cc:TestTranslation">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/retrieval/inverted_file_entry_test.cc:TestReadWrite">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/retrieval/visual_index_test.cc:TestVocabTree">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestAllocateGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestAllocateRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestBitmapColorCast">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestBitmapColorEmpty">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestBitmapGrayColor">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestBitsPerPixel">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestClone">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestCloneAsGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestCloneAsRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestConvertToColMajorArrayGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestConvertToColMajorArrayRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestConvertToRowMajorArrayGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestConvertToRowMajorArrayRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestDeallocate">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestGetAndSetPixelGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestGetAndSetPixelRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestGetScanlineGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestGetScanlineRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestInterpolateBilinear">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestInterpolateNearestNeighbor">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestNumBytes">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestRescaleGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestRescaleRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestSmoothGrey">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/bitmap_test.cc:TestSmoothRGB">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestLRUCacheClear">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestLRUCacheEmpty">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestLRUCacheGet">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestLRUCacheGetMutable">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestLRUCachePop">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestLRUCacheSet">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheClear">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheEmpty">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheGet">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheUpdateNumBytes">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/endian_test.cc:TestIsLittleBigEndian">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/endian_test.cc:TestNativeToLitteBigEndian">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/endian_test.cc:TestReadWriteBinaryLittleEndian">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/endian_test.cc:TestReverseBytes">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestAnyGreaterThan">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestAnyLessThan">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestClip">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestDegToRad">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestIsInf">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestIsNaN">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestMean">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestMedian">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestNChooseK">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestNextCombination">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestPercentile">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestRadToDeg">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestScaleSigmoid">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestSigmoid">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestSignOfNumber">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestStdDev">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestTruncateCast">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/math_test.cc:TestVariance">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/matrix_test.cc:TestDecomposeMatrixRQ">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestCSVToVector">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestEnsureTrailingSlash">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestGetParentDir">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestGetPathBaseName">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestHasFileExtension">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestJoinPaths">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestRemoveCommandLineArgument">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestSplitFileExtension">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestVectorContainsDuplicateValues">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestVectorContainsValue">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/misc_test.cc:TestVectorToCSV">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/opengl_utils_test.cc:TestOpenGLContextManager">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/opengl_utils_test.cc:TestRunThreadWithOpenGLContext">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestPRNGSeed">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestRandomGaussian">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestRandomInteger">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestRandomReal">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestRepeatability">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestShuffleAll">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/random_test.cc:TestShuffleNone">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringContains">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringGetAfter">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringLeftString">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringPrintf">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringReplace">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringSplit">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringStartsWith">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringStrim">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringStrimRight">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringToLower">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/string_test.cc:TestStringToUpper">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestCallback">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestDefaultCallback">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestGetEffectiveNumThreads">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueClear">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueMultipleProducerMultipleConsumer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueMultipleProducerSingleConsumer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueSingleProducerMultipleConsumer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueSingleProducerSingleConsumer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueSingleProducerSingleConsumerMaxNumJobs">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueStopConsumer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueStopProducer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestJobQueueWait">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadInvalidSetup">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPause">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPauseStop">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolArgNoReturn">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolArgReturn">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolDestructor">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolGetThreadIndex">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolNoArgNoReturn">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolNoArgReturn">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolStop">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolWait">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolWaitEverytime">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolWaitWithPause">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadPoolWaitWithoutPause">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadRestart">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadStop">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadTimer">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadValidSetup">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/threading_test.cc:TestThreadWait">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/timer_test.cc:TestPause">Checked</value>
-    <value type="Qt::CheckState" key="1@/home/lin/Desktop/Repository/ColmapForVisSat/src/util/timer_test.cc:TestStart">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_database_test.cc:Master Test Suite">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_database_test.cc:TestAmbiguousMatch">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_database_test.cc:TestExactMatch">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_database_test.cc:TestInitialization">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestFOV">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestFullOpenCV">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestOpenCV">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestOpenCVFisheye">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestPinhole">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestRadial">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestRadialFisheye">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestSimplePinhole">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestSimpleRadial">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestSimpleRadialFisheye">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_models_test.cc:TestThinPrismFisheye">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestAddCamera">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestAddSnapshot">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestCheck">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestComputeAbsolutePose">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestComputeRelativePoses">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestComputeScale">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_rig_test.cc:TestEmpty">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestCalibrationMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestCameraId">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestFocalLength">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestHasBogusParams">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestImageToWorld">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestImageToWorldThreshold">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestInitializeWithId">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestInitializeWithName">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestModelId">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestParamIdxs">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestParams">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestParamsFromString">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestParamsInfo">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestParamsToString">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestPrincipalPoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestPriorFocalLength">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestRescale">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestVerifyParams">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestWidthHeight">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/camera_test.cc:TestWorldToImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/correspondence_graph_test.cc:TestDefault">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/correspondence_graph_test.cc:TestDuplicate">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/correspondence_graph_test.cc:TestOutOfBounds">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/correspondence_graph_test.cc:TestThreeView">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/correspondence_graph_test.cc:TestTwoView">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/cost_functions_test.cc:TestBundleAdjustmentConstantPoseCostFunction">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/cost_functions_test.cc:TestBundleAdjustmentCostFunction">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/cost_functions_test.cc:TestRelativePoseCostFunction">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/cost_functions_test.cc:TestRigBundleAdjustmentCostFunction">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_cache_test.cc:TestAddImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_cache_test.cc:TestDegenerateCamera">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestCamera">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestDescriptors">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestImagePairToPairId">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestKeypoints">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestMatches">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestOpenClose">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestOpenCloseConstructorDestructor">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestSwapImagePair">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestTransaction">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestTransactionMultiThreaded">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/database_test.cc:TestTwoViewGeometry">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestDecomposeEssentialMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestEpipoleFromEssentialMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestEssentialMatrixFromPose">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestEssentialMatrixFromPoses">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestFindOptimalImageObservations">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestInvertEssentialMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestPoseFromEssentialMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/essential_matrix_test.cc:TestRefineEssentialMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/gps_test.cc:TestEllToXYZGRS80">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/gps_test.cc:TestEllToXYZWGS84">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/gps_test.cc:TestXYZToEllToXYZ_GRS80">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/gps_test.cc:TestXYZToEllToXYZ_WGS84">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/gps_test.cc:TestXYZToEll_GRS80">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/gps_test.cc:TestXYZToEll_WGS84">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagner">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagnerDisconnected">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagnerDuplicateEdge">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeMinGraphCutStoerWagnerMissingVertex">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCut">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCutDisconnected">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCutDuplicateEdge">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestComputeNormalizedMinGraphCutMissingVertex">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestMinSTGraphCut1">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestMinSTGraphCut2">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/graph_cut_test.cc:TestMinSTGraphCut3">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/homography_matrix_test.cc:TestDecomposeHomographyMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/homography_matrix_test.cc:TestHomographyMatrixFromPosePlanarScene">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/homography_matrix_test.cc:TestHomographyMatrixFromPosePureRotation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/homography_matrix_test.cc:TestPoseFromHomographyMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestImageId">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestInverseProjectionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestName">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestNormalizeQvec">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestNumCorrespondences">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestNumObservations">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestNumPoints2D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestNumPoints3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestNumVisiblePoints3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestPoint3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestPoint3DVisibilityScore">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestPoints2D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestProjectionCenter">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestProjectionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestQvec">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestQvecPrior">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestRegistered">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestRotationMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestTvec">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestTvecPrior">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/image_test.cc:TestViewingDirection">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/line_test.cc:TestClassifyLineSegmentOrientations">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/line_test.cc:TestDetectLineSegments">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/point2d_test.cc:TestPoint3DId">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/point2d_test.cc:TestXY">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/point3d_test.cc:TestError">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/point3d_test.cc:TestRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/point3d_test.cc:TestTrack">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/point3d_test.cc:TestXYZ">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestEvaluatePolynomial">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindLinearPolynomialRoots">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindPolynomialRootsCompanionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindPolynomialRootsCompanionMatrixLinearQuadratic">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindPolynomialRootsCompanionMatrixZeroSolution">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindPolynomialRootsDurandKerner">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindPolynomialRootsDurandKernerLinearQuadratic">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindQuadraticPolynomialRootsComplex">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/polynomial_test.cc:TestFindQuadraticPolynomialRootsReal">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestAverageQuaternions">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestCalculateBaseline">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestCheckCheirality">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestComposeIdentityQuaternion">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestComputeRelativePose">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestConcatenatePoses">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestConcatenateQuaternions">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestCrossProductMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestEulerAnglesX">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestEulerAnglesY">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestEulerAnglesZ">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestInterpolatePose">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestInvertPose">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestInvertQuaternion">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestNormalizeQuaternion">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestPoseFromProjectionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestPoseFromProjectionParameters">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestQuaternionRotatePoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestQuaternionToRotationMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/pose_test.cc:TestRotationFromUnitVectors">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestCalculateAngularError">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestCalculateDepth">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestCalculateSquaredReprojectionError">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestComposeProjectionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestComputeClosestRotationMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestDecomposeProjectionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestHasPointPositiveDepth">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/projection_test.cc:TestInvertProjectionMatrix">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_manager_test.cc:TestAddGet">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_manager_test.cc:TestClear">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_manager_test.cc:TestDelete">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestAddObservation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestAddPoint3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestComputeMeanObservationsPerRegImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestComputeMeanReprojectionError">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestComputeMeanTrackLength">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestComputeNumObservations">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestDeleteObservation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestDeletePoint3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestFilterAllPoints">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestFilterImages">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestFilterObservationsWithNegativeDepth">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestFilterPoints3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestFilterPoints3DInImages">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestFindImageWithName">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestMergePoints3D">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestNormalize">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestRegisterImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/reconstruction_test.cc:TestTransform">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/scene_clustering_test.cc:TestOneLevel">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/scene_clustering_test.cc:TestOneOverlap">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/scene_clustering_test.cc:TestThreeLevels">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/scene_clustering_test.cc:TestThreeLevelsMultipleImages">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/scene_clustering_test.cc:TestTwoLevels">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/scene_clustering_test.cc:TestTwoOverlap">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/similarity_transform_test.cc:TestEstimation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/track_test.cc:TestAddElement">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/track_test.cc:TestCompress">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/track_test.cc:TestDeleteElement">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/track_test.cc:TestReserve">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/track_test.cc:TestSetElements">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/track_test.cc:TestTrackElement">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/triangulation_test.cc:TestCalculateTriangulationAngle">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/triangulation_test.cc:TestTriangulatePoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/undistortion_test.cc:TestRectifyStereoCameras">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/undistortion_test.cc:TestUndistortCamera">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/undistortion_test.cc:TestUndistortCameraBlankPixels">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/undistortion_test.cc:TestUndistortCameraNoBlankPixels">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/undistortion_test.cc:TestUndistortReconstruction">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/visibility_pyramid_test.cc:TestScore">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestDownsampleImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestIdenticalCameras">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestResampleImageBilinear">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestShiftedCameras">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestSmoothImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestWarpImageWithHomographyBetweenCamerasIdentity">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestWarpImageWithHomographyBetweenCamerasTransposed">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestWarpImageWithHomographyIdentity">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/base/warp_test.cc:TestWarpImageWithHomographyTransposed">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/absolute_pose_test.cc:TestEPNP">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/absolute_pose_test.cc:TestP3P">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/affine_transform_test.cc:TestAffineTransform">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/coordinate_frame_test.cc:TestEstimateGravityVectorFromImageOrientation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/coordinate_frame_test.cc:TestEstimateManhattanWorldFrame">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/essential_matrix_test.cc:TestEightPoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/essential_matrix_test.cc:TestFivePoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/fundamental_matrix_test.cc:TestSevenPoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/generalized_absolute_pose_test.cc:Estimate">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/homography_matrix_test.cc:TestEstimate">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/two_view_geometry_test.cc:TestInvert">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/utils_test.cc:TestCenterAndNormalizeImagePoints">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/estimators/utils_test.cc:TestComputeSquaredSampsonError">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestCreateSiftGPUMatcherCUDA">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestCreateSiftGPUMatcherOpenGL">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestExtractCovariantAffineDSPSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestExtractCovariantAffineSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestExtractCovariantDSPSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestExtractCovariantSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestExtractSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestExtractSiftFeaturesGPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestMatchGuidedSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestMatchGuidedSiftFeaturesGPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestMatchSiftFeaturesCPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestMatchSiftFeaturesCPUvsGPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/sift_test.cc:TestMatchSiftFeaturesGPU">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/types_test.cc:TestFeatureDescriptors">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/types_test.cc:TestFeatureKeypoints">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/types_test.cc:TestFeatureMatchHashing">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/types_test.cc:TestFeatureMatches">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/utils_test.cc:TestExtractTopScaleFeatures">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/utils_test.cc:TestFeatureDescriptorsToUnsignedByte">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/utils_test.cc:TestFeatureKeypointsToPointsVector">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/utils_test.cc:TestL1RootNormalizeFeatureDescriptors">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/feature/utils_test.cc:TestL2NormalizeFeatureDescriptors">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/consistency_graph_test.cc:TestFull">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/consistency_graph_test.cc:TestPartial">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/consistency_graph_test.cc:TestZero">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/depth_map_test.cc:TestDownsize">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/depth_map_test.cc:TestNonEmpty">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/depth_map_test.cc:TestToBitmap">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/mat_test.cc:TestFill">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/mvs/mat_test.cc:TestGetSet">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestConfigNumObservations">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestConstantExtraParam">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestConstantFocalLength">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestConstantPoints">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestConstantRigFourView">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestParallelReconstructionSupported">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestParallelTwoViewConstantIntrinsics">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestParallelTwoViewVariableIntrinsics">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestPartiallyContainedTracks">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestPartiallyContainedTracksForceToOptimizePoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestRigFourView">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestRigFourViewPartial">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestRigTwoView">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestTwoViewConstantCamera">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestVariableImage">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/bundle_adjustment_test.cc:TestVariablePrincipalPoint">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/combination_sampler_test.cc:TestEqualSamples">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/combination_sampler_test.cc:TestLessSamples">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/least_absolute_deviations_test.cc:TestOverDetermined">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/least_absolute_deviations_test.cc:TestUnderDetermined">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/least_absolute_deviations_test.cc:TestWellDetermined">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/loransac_test.cc:TestReport">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/loransac_test.cc:TestSimilarityTransform">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/progressive_sampler_test.cc:TestProgressive">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/ransac_test.cc:TestNumTrials">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/ransac_test.cc:TestOptions">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/support_measurement_test.cc:TestInlierSupportMeasuremer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/optim/support_measurement_test.cc:TestMEstimatorSupportMeasurer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/retrieval/geometry_test.cc:TestIdentity">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/retrieval/geometry_test.cc:TestOrientation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/retrieval/geometry_test.cc:TestScale">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/retrieval/geometry_test.cc:TestTranslation">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/retrieval/inverted_file_entry_test.cc:TestReadWrite">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/retrieval/visual_index_test.cc:TestVocabTree">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestAllocateGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestAllocateRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestBitmapColorCast">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestBitmapColorEmpty">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestBitmapGrayColor">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestBitsPerPixel">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestClone">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestCloneAsGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestCloneAsRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestConvertToColMajorArrayGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestConvertToColMajorArrayRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestConvertToRowMajorArrayGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestConvertToRowMajorArrayRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestDeallocate">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestGetAndSetPixelGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestGetAndSetPixelRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestGetScanlineGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestGetScanlineRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestInterpolateBilinear">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestInterpolateNearestNeighbor">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestNumBytes">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestRescaleGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestRescaleRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestSmoothGrey">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/bitmap_test.cc:TestSmoothRGB">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestLRUCacheClear">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestLRUCacheEmpty">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestLRUCacheGet">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestLRUCacheGetMutable">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestLRUCachePop">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestLRUCacheSet">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheClear">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheEmpty">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheGet">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/cache_test.cc:TestMemoryConstrainedLRUCacheUpdateNumBytes">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/endian_test.cc:TestIsLittleBigEndian">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/endian_test.cc:TestNativeToLitteBigEndian">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/endian_test.cc:TestReadWriteBinaryLittleEndian">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/endian_test.cc:TestReverseBytes">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestAnyGreaterThan">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestAnyLessThan">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestClip">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestDegToRad">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestIsInf">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestIsNaN">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestMean">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestMedian">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestNChooseK">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestNextCombination">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestPercentile">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestRadToDeg">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestScaleSigmoid">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestSigmoid">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestSignOfNumber">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestStdDev">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestTruncateCast">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/math_test.cc:TestVariance">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/matrix_test.cc:TestDecomposeMatrixRQ">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestCSVToVector">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestEnsureTrailingSlash">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestGetParentDir">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestGetPathBaseName">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestHasFileExtension">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestJoinPaths">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestRemoveCommandLineArgument">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestSplitFileExtension">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestVectorContainsDuplicateValues">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestVectorContainsValue">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/misc_test.cc:TestVectorToCSV">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/opengl_utils_test.cc:TestOpenGLContextManager">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/opengl_utils_test.cc:TestRunThreadWithOpenGLContext">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestPRNGSeed">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestRandomGaussian">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestRandomInteger">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestRandomReal">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestRepeatability">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestShuffleAll">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/random_test.cc:TestShuffleNone">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringContains">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringGetAfter">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringLeftString">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringPrintf">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringReplace">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringSplit">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringStartsWith">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringStrim">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringStrimRight">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringToLower">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/string_test.cc:TestStringToUpper">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestCallback">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestDefaultCallback">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestGetEffectiveNumThreads">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueClear">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueMultipleProducerMultipleConsumer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueMultipleProducerSingleConsumer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueSingleProducerMultipleConsumer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueSingleProducerSingleConsumer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueSingleProducerSingleConsumerMaxNumJobs">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueStopConsumer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueStopProducer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestJobQueueWait">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadInvalidSetup">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPause">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPauseStop">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolArgNoReturn">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolArgReturn">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolDestructor">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolGetThreadIndex">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolNoArgNoReturn">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolNoArgReturn">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolStop">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolWait">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolWaitEverytime">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolWaitWithPause">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadPoolWaitWithoutPause">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadRestart">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadStop">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadTimer">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadValidSetup">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/threading_test.cc:TestThreadWait">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/timer_test.cc:TestPause">Checked</value>
+    <value type="Qt::CheckState" key="D:/Source_Code/Repostiory/ColmapforSat/src/util/timer_test.cc:TestStart">Checked</value>
    </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>
-   <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey"/>
+   <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey">
+    <value type="QString">-fno-delayed-template-parsing</value>
+   </valuelist>
    <value type="bool" key="ClangCodeModel.UseGlobalConfig">true</value>
-   <value type="QString" key="ClangCodeModel.WarningConfigId">Builtin.BuildSystem</value>
+   <value type="QString" key="ClangCodeModel.WarningConfigId">Builtin.Questionable</value>
    <valuemap type="QVariantMap" key="ClangTools">
-    <value type="bool" key="ClangTools.AnalyzeOpenFiles">true</value>
     <value type="bool" key="ClangTools.BuildBeforeAnalysis">true</value>
     <value type="QString" key="ClangTools.DiagnosticConfig">Builtin.DefaultTidyAndClazy</value>
-    <value type="int" key="ClangTools.ParallelJobs">8</value>
+    <value type="int" key="ClangTools.ParallelJobs">2</value>
     <valuelist type="QVariantList" key="ClangTools.SelectedDirs"/>
     <valuelist type="QVariantList" key="ClangTools.SelectedFiles"/>
     <valuelist type="QVariantList" key="ClangTools.SuppressedDiagnostics"/>
@@ -500,30 +498,31 @@
   <variable>ProjectExplorer.Project.Target.0</variable>
   <valuemap type="QVariantMap">
    <value type="QString" key="DeviceType">Desktop</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Replacement for &quot;Imported Kit&quot;</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Replacement for &quot;Imported Kit&quot;</value>
-   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{342b945a-8f66-4c85-8fad-e8d7ae82f7f4}</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Qt 5.12.9 (Library)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Qt 5.12.9 (Library)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{5819b12c-4e8a-413c-a4e7-a07f230f02fc}</value>
    <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
    <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
-    <value type="QString" key="CMake.Build.Type">RelWithDebInfo</value>
-    <value type="QString" key="CMake.Initial.Parameters">-GNinja
--DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
--DCMAKE_PROJECT_INCLUDE_BEFORE:PATH=%{IDE:ResourcePath}/package-manager/auto-setup.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-GVisual Studio 16 2019
+-Ax64
+-Thost=x64
+-DCMAKE_BUILD_TYPE:String=RelWithDebInfo
 -DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
 -DCMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
 -DCMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}
 -DCMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
-    <value type="QString" key="CMake.Source.Directory">/home/lin/Desktop/Repository/ColmapForVisSat</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/lin/Desktop/Repository/ColmapForVisSat/build_ninja</value>
+    <value type="int" key="EnableQmlDebugging">2</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:\Source_Code\Repostiory\ColmapforSat\build</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="QString" key="CMakeProjectManager.MakeStep.AdditionalArguments"></value>
       <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
        <value type="QString">all</value>
       </valuelist>
+      <value type="QString" key="CMakeProjectManager.MakeStep.CMakeArguments"></value>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
-      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -533,11 +532,12 @@
     </valuemap>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="QString" key="CMakeProjectManager.MakeStep.AdditionalArguments"></value>
       <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
        <value type="QString">clean</value>
       </valuelist>
+      <value type="QString" key="CMakeProjectManager.MakeStep.CMakeArguments"></value>
       <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
-      <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
       <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
      </valuemap>
      <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
@@ -566,30 +566,238 @@
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.PluginSettings"/>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
+    <value type="QString" key="Analyzer.Perf.CallgraphMode">dwarf</value>
+    <valuelist type="QVariantList" key="Analyzer.Perf.Events">
+     <value type="QString">cpu-cycles</value>
+    </valuelist>
+    <valuelist type="QVariantList" key="Analyzer.Perf.ExtraArguments"/>
+    <value type="int" key="Analyzer.Perf.Frequency">250</value>
+    <valuelist type="QVariantList" key="Analyzer.Perf.RecordArguments">
+     <value type="QString">-e</value>
+     <value type="QString">cpu-cycles</value>
+     <value type="QString">--call-graph</value>
+     <value type="QString">dwarf,4096</value>
+     <value type="QString">-F</value>
+     <value type="QString">250</value>
+    </valuelist>
+    <value type="QString" key="Analyzer.Perf.SampleMode">-F</value>
     <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Perf.StackSize">4096</value>
+    <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
+    <value type="bool" key="Analyzer.QmlProfiler.FlushEnabled">false</value>
+    <value type="uint" key="Analyzer.QmlProfiler.FlushInterval">1000</value>
+    <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
     <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableCacheSim">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableEventToolTips">true</value>
+    <value type="double" key="Analyzer.Valgrind.Callgrind.MinimumCostRatio">0.01</value>
+    <value type="double" key="Analyzer.Valgrind.Callgrind.VisualisationMinimumCostRatio">10</value>
+    <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
+    <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
+    <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
+    <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
+    <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
+    <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
     <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
+    <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
+    <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
+    <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
+     <value type="int">0</value>
+     <value type="int">1</value>
+     <value type="int">2</value>
+     <value type="int">3</value>
+     <value type="int">4</value>
+     <value type="int">5</value>
+     <value type="int">6</value>
+     <value type="int">7</value>
+     <value type="int">8</value>
+     <value type="int">9</value>
+     <value type="int">10</value>
+     <value type="int">11</value>
+     <value type="int">12</value>
+     <value type="int">13</value>
+     <value type="int">14</value>
+    </valuelist>
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">colmap_exe</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeRunConfiguration.colmap_exe</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">colmap_exe</value>
-    <value type="QString" key="RunConfiguration.Arguments">feature_extractor --database_path /home/lin/Desktop/Result/colmap/sfm_perspective/database.db                                     --image_path /home/lin/Desktop/Result/colmap/sfm_perspective/images                                     --ImageReader.camera_model PERSPECTIVE                                     --SiftExtraction.max_image_size 10000                                      --SiftExtraction.estimate_affine_shape 0                                     --SiftExtraction.domain_size_pooling 1                                     --SiftExtraction.max_num_features 20000                                     --SiftExtraction.num_threads 32                                     --SiftExtraction.use_gpu 1                                     --SiftExtraction.gpu_index -1</value>
+    <value type="QString" key="RunConfiguration.Arguments"></value>
+    <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
+    <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
     <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
+    <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
-    <value type="QString" key="RunConfiguration.WorkingDirectory.default">/home/lin/Desktop/Repository/ColmapForVisSat/build_ninja/src/exe</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default">D:/Source_Code/Repostiory/ColmapforSat/build/src/exe/Debug</value>
+   </valuemap>
+   <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
+  </valuemap>
+ </data>
+ <data>
+  <variable>ProjectExplorer.Project.Target.1</variable>
+  <valuemap type="QVariantMap">
+   <value type="QString" key="DeviceType">Desktop</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Qt 5.12.9 (Library)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Qt 5.12.9 (Library)</value>
+   <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">{82f92393-9ad0-4aca-bac9-9c0219a45ada}</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveBuildConfiguration">0</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveDeployConfiguration">0</value>
+   <value type="int" key="ProjectExplorer.Target.ActiveRunConfiguration">0</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.0">
+    <value type="QString" key="CMake.Initial.Parameters">-GNinja
+-DCMAKE_BUILD_TYPE:String=RelWithDebInfo
+-DQT_QMAKE_EXECUTABLE:STRING=%{Qt:qmakeExecutable}
+-DCMAKE_PREFIX_PATH:STRING=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_C_COMPILER:STRING=%{Compiler:Executable:C}
+-DCMAKE_CXX_COMPILER:STRING=%{Compiler:Executable:Cxx}</value>
+    <value type="int" key="EnableQmlDebugging">2</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">D:\Source_Code\Repostiory\ColmapforSat\build_ninja</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="QString" key="CMakeProjectManager.MakeStep.AdditionalArguments"></value>
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">all</value>
+      </valuelist>
+      <value type="QString" key="CMakeProjectManager.MakeStep.CMakeArguments"></value>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Build</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Build</value>
+    </valuemap>
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.1">
+     <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
+      <value type="QString" key="CMakeProjectManager.MakeStep.AdditionalArguments"></value>
+      <valuelist type="QVariantList" key="CMakeProjectManager.MakeStep.BuildTargets">
+       <value type="QString">clean</value>
+      </valuelist>
+      <value type="QString" key="CMakeProjectManager.MakeStep.CMakeArguments"></value>
+      <value type="bool" key="ProjectExplorer.BuildStep.Enabled">true</value>
+      <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.MakeStep</value>
+     </valuemap>
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">1</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Clean</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Clean</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">2</value>
+    <value type="bool" key="ProjectExplorer.BuildConfiguration.ClearSystemEnvironment">false</value>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.CustomParsers"/>
+    <valuelist type="QVariantList" key="ProjectExplorer.BuildConfiguration.UserEnvironmentChanges"/>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">RelWithDebInfo</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">CMakeProjectManager.CMakeBuildConfiguration</value>
+   </valuemap>
+   <value type="int" key="ProjectExplorer.Target.BuildConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.DeployConfiguration.0">
+    <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
+     <value type="int" key="ProjectExplorer.BuildStepList.StepsCount">0</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DefaultDisplayName">Deploy</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">Deploy</value>
+     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.BuildSteps.Deploy</value>
+    </valuemap>
+    <value type="int" key="ProjectExplorer.BuildConfiguration.BuildStepListCount">1</value>
+    <valuemap type="QVariantMap" key="ProjectExplorer.DeployConfiguration.CustomData"/>
+    <value type="bool" key="ProjectExplorer.DeployConfiguration.CustomDataEnabled">false</value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.DefaultDeployConfiguration</value>
+   </valuemap>
+   <value type="int" key="ProjectExplorer.Target.DeployConfigurationCount">1</value>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.PluginSettings"/>
+   <valuemap type="QVariantMap" key="ProjectExplorer.Target.RunConfiguration.0">
+    <value type="QString" key="Analyzer.Perf.CallgraphMode">dwarf</value>
+    <valuelist type="QVariantList" key="Analyzer.Perf.Events">
+     <value type="QString">cpu-cycles</value>
+    </valuelist>
+    <valuelist type="QVariantList" key="Analyzer.Perf.ExtraArguments"/>
+    <value type="int" key="Analyzer.Perf.Frequency">250</value>
+    <valuelist type="QVariantList" key="Analyzer.Perf.RecordArguments">
+     <value type="QString">-e</value>
+     <value type="QString">cpu-cycles</value>
+     <value type="QString">--call-graph</value>
+     <value type="QString">dwarf,4096</value>
+     <value type="QString">-F</value>
+     <value type="QString">250</value>
+    </valuelist>
+    <value type="QString" key="Analyzer.Perf.SampleMode">-F</value>
+    <value type="bool" key="Analyzer.Perf.Settings.UseGlobalSettings">true</value>
+    <value type="int" key="Analyzer.Perf.StackSize">4096</value>
+    <value type="bool" key="Analyzer.QmlProfiler.AggregateTraces">false</value>
+    <value type="bool" key="Analyzer.QmlProfiler.FlushEnabled">false</value>
+    <value type="uint" key="Analyzer.QmlProfiler.FlushInterval">1000</value>
+    <value type="QString" key="Analyzer.QmlProfiler.LastTraceFile"></value>
+    <value type="bool" key="Analyzer.QmlProfiler.Settings.UseGlobalSettings">true</value>
+    <valuelist type="QVariantList" key="Analyzer.Valgrind.AddedSuppressionFiles"/>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectBusEvents">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.CollectSystime">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableBranchSim">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableCacheSim">false</value>
+    <value type="bool" key="Analyzer.Valgrind.Callgrind.EnableEventToolTips">true</value>
+    <value type="double" key="Analyzer.Valgrind.Callgrind.MinimumCostRatio">0.01</value>
+    <value type="double" key="Analyzer.Valgrind.Callgrind.VisualisationMinimumCostRatio">10</value>
+    <value type="bool" key="Analyzer.Valgrind.FilterExternalIssues">true</value>
+    <value type="QString" key="Analyzer.Valgrind.KCachegrindExecutable">kcachegrind</value>
+    <value type="int" key="Analyzer.Valgrind.LeakCheckOnFinish">1</value>
+    <value type="int" key="Analyzer.Valgrind.NumCallers">25</value>
+    <valuelist type="QVariantList" key="Analyzer.Valgrind.RemovedSuppressionFiles"/>
+    <value type="int" key="Analyzer.Valgrind.SelfModifyingCodeDetection">1</value>
+    <value type="bool" key="Analyzer.Valgrind.Settings.UseGlobalSettings">true</value>
+    <value type="bool" key="Analyzer.Valgrind.ShowReachable">false</value>
+    <value type="bool" key="Analyzer.Valgrind.TrackOrigins">true</value>
+    <value type="QString" key="Analyzer.Valgrind.ValgrindExecutable">valgrind</value>
+    <valuelist type="QVariantList" key="Analyzer.Valgrind.VisibleErrorKinds">
+     <value type="int">0</value>
+     <value type="int">1</value>
+     <value type="int">2</value>
+     <value type="int">3</value>
+     <value type="int">4</value>
+     <value type="int">5</value>
+     <value type="int">6</value>
+     <value type="int">7</value>
+     <value type="int">8</value>
+     <value type="int">9</value>
+     <value type="int">10</value>
+     <value type="int">11</value>
+     <value type="int">12</value>
+     <value type="int">13</value>
+     <value type="int">14</value>
+    </valuelist>
+    <valuelist type="QVariantList" key="CustomOutputParsers"/>
+    <value type="int" key="PE.EnvironmentAspect.Base">2</value>
+    <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
+    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Executable"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey"></value>
+    <value type="QString" key="RunConfiguration.Arguments"></value>
+    <value type="bool" key="RunConfiguration.Arguments.multi">false</value>
+    <value type="QString" key="RunConfiguration.OverrideDebuggerStartup"></value>
+    <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
+    <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseMultiProcess">false</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
+    <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory"></value>
+    <value type="QString" key="RunConfiguration.WorkingDirectory.default"></value>
    </valuemap>
    <value type="int" key="ProjectExplorer.Target.RunConfigurationCount">1</value>
   </valuemap>
  </data>
  <data>
   <variable>ProjectExplorer.Project.TargetCount</variable>
-  <value type="int">1</value>
+  <value type="int">2</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.Updater.FileVersion</variable>

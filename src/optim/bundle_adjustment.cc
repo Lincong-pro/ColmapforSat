@@ -385,21 +385,21 @@ bool BundleAdjuster::Solve(Reconstruction* reconstruction) {
 const ceres::Solver::Summary& BundleAdjuster::Summary() const {
   return summary_;
 }
-
+//
 void BundleAdjuster::SetUp(Reconstruction* reconstruction,
                            ceres::LossFunction* loss_function) {
   // Warning: AddPointsToProblem assumes that AddImageToProblem is called first.
   // Do not change order of instructions!
   for (const image_t image_id : config_.Images()) {
-    AddImageToProblem(image_id, reconstruction, loss_function);
+    AddImageToProblem(image_id, reconstruction, loss_function); //添加内方位元素block
   }
   for (const auto point3D_id : config_.VariablePoints()) {
-    AddPointToProblem(point3D_id, reconstruction, loss_function);
+    AddPointToProblem(point3D_id, reconstruction, loss_function);//添加三维点block(可变动点)
   }
   for (const auto point3D_id : config_.ConstantPoints()) {
-    AddPointToProblem(point3D_id, reconstruction, loss_function);
+    AddPointToProblem(point3D_id, reconstruction, loss_function);//添加三维点block(不可变动点)
   }
-
+  // @lin 单独添加约束点的块
   // add constrained points
   ceres::LossFunction* constrain_points_loss_function = options_.CreateConstrainPointsLossFunction();
   for (const auto point3D_id : config_.ConstrainedPoints()) {
@@ -649,7 +649,7 @@ bool ParallelBundleAdjuster::Solve(Reconstruction* reconstruction) {
       << "Cannot use the same ParallelBundleAdjuster multiple times";
   CHECK(!ba_options_.refine_principal_point);
   CHECK_EQ(ba_options_.refine_focal_length, ba_options_.refine_extra_params);
-
+  // 设置reconstruction
   SetUp(reconstruction);
 
   pba::ParallelBA::DeviceT device;
