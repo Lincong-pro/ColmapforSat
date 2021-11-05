@@ -124,16 +124,18 @@ void BundleAdjustmentController::Run() {
   for (const image_t image_id : reg_image_ids) {
     ba_config.AddImage(image_id);
   }
-
+  //lin 检查是否对3D点添加了限制（即在平差或者计算loss的时候加一个权值参数）
+  //@kai add
   // check if we should put a constraint on the 3D points
   if (ba_options.constrain_points) {
+      //如果ba的选项中添加了限制该点偏离不能太大
 	  const std::unordered_set<point3D_t>& point3D_ids = reconstruction_->Point3DIds();
 	  for (const point3D_t point3D_id : point3D_ids) {
-		  ba_config.AddConstrainedPoint(point3D_id);
+          ba_config.AddConstrainedPoint(point3D_id);//在平差之前对于每一个三维点进行限制
 	  }
   } else {
 	  ba_config.SetConstantPose(reg_image_ids[0]);
-	  // @kai commenting out this strange line
+      // @kai commenting out this strange line（这个人对这行代码感到很奇怪）--- source code
 	  ba_config.SetConstantTvec(reg_image_ids[1], {0});
   }
 

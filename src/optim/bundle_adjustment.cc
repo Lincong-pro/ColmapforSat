@@ -1,32 +1,42 @@
 // ===============================================================================================================
 // Copyright (c) 2019, Cornell University. All rights reserved.
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that
-// the following conditions are met:
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
 //
-//     * Redistributions of source code must retain the above copyright otice, this list of conditions and
+//     * Redistributions of source code must retain the above copyright otice,
+//     this list of conditions and
 //       the following disclaimer.
 //
-//     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
-//       the following disclaimer in the documentation and/or other materials provided with the distribution.
-//       
-//     * Neither the name of Cornell University nor the names of its contributors may be used to endorse or
-//       promote products derived from this software without specific prior written permission.
+//     * Redistributions in binary form must reproduce the above copyright
+//     notice, this list of conditions and
+//       the following disclaimer in the documentation and/or other materials
+//       provided with the distribution.
 //
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED 
-// WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-// TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
-// OF SUCH DAMAGE.
+//     * Neither the name of Cornell University nor the names of its
+//     contributors may be used to endorse or
+//       promote products derived from this software without specific prior
+//       written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
 //
 // Author: Kai Zhang (kz298@cornell.edu)
 //
-// The research is based upon work supported by the Office of the Director of National Intelligence (ODNI),     
-// Intelligence Advanced Research Projects Activity (IARPA), via DOI/IBC Contract Number D17PC00287.            
-// The U.S. Government is authorized to reproduce and distribute copies of this work for Governmental purposes. 
+// The research is based upon work supported by the Office of the Director of
+// National Intelligence (ODNI), Intelligence Advanced Research Projects
+// Activity (IARPA), via DOI/IBC Contract Number D17PC00287. The U.S. Government
+// is authorized to reproduce and distribute copies of this work for
+// Governmental purposes.
 // ===============================================================================================================
 //
 //
@@ -82,41 +92,46 @@ namespace colmap {
 // BundleAdjustmentOptions
 ////////////////////////////////////////////////////////////////////////////////
 
-ceres::LossFunction* BundleAdjustmentOptions::CreateLossFunction() const {
-  ceres::LossFunction* loss_function = nullptr;
+// BA的loss函数
+ceres::LossFunction *BundleAdjustmentOptions::CreateLossFunction() const {
+  ceres::LossFunction *loss_function = nullptr;
   switch (loss_function_type) {
-    case LossFunctionType::TRIVIAL:
-      loss_function = new ceres::TrivialLoss();
-      break;
-    case LossFunctionType::SOFT_L1:
-      loss_function = new ceres::SoftLOneLoss(loss_function_scale);
-      break;
-    case LossFunctionType::CAUCHY:
-      loss_function = new ceres::CauchyLoss(loss_function_scale);
-      break;
+  case LossFunctionType::TRIVIAL:
+    loss_function = new ceres::TrivialLoss();
+    break;
+  case LossFunctionType::SOFT_L1:
+    loss_function = new ceres::SoftLOneLoss(loss_function_scale);
+    break;
+  case LossFunctionType::CAUCHY:
+    loss_function = new ceres::CauchyLoss(loss_function_scale);
+    break;
   }
   CHECK_NOTNULL(loss_function);
   return loss_function;
 }
 
-ceres::LossFunction* BundleAdjustmentOptions::CreateConstrainPointsLossFunction() const {
-	  ceres::LossFunction* loss_function = nullptr;
-	  switch (constrain_points_loss) {
-	    case LossFunctionType::TRIVIAL:
-	      loss_function = new ceres::ScaledLoss(new ceres::TrivialLoss(), constrain_points_loss_weight,
-	    		  ceres::TAKE_OWNERSHIP);
-	      break;
-	    case LossFunctionType::SOFT_L1:
-	      loss_function = new ceres::ScaledLoss(new ceres::SoftLOneLoss(constrain_points_loss_scale), constrain_points_loss_weight,
-	    		  ceres::TAKE_OWNERSHIP);
-	      break;
-	    case LossFunctionType::CAUCHY:
-	      loss_function = new ceres::ScaledLoss(new ceres::CauchyLoss(constrain_points_loss_scale), constrain_points_loss_weight,
-	    		  ceres::TAKE_OWNERSHIP);
-	      break;
-	  }
-	  CHECK_NOTNULL(loss_function);
-	  return loss_function;
+ceres::LossFunction *
+BundleAdjustmentOptions::CreateConstrainPointsLossFunction() const {
+  ceres::LossFunction *loss_function = nullptr;
+  switch (constrain_points_loss) {
+  case LossFunctionType::TRIVIAL:
+    loss_function = new ceres::ScaledLoss(
+        new ceres::TrivialLoss(), constrain_points_loss_weight,
+        ceres::TAKE_OWNERSHIP); //设置一个带有权值比例的loss函数，不参杂缩放量
+    break;
+  case LossFunctionType::SOFT_L1:
+    loss_function = new ceres::ScaledLoss(
+        new ceres::SoftLOneLoss(constrain_points_loss_scale),
+        constrain_points_loss_weight, ceres::TAKE_OWNERSHIP);
+    break;
+  case LossFunctionType::CAUCHY:
+    loss_function = new ceres::ScaledLoss(
+        new ceres::CauchyLoss(constrain_points_loss_scale),
+        constrain_points_loss_weight, ceres::TAKE_OWNERSHIP);
+    break;
+  }
+  CHECK_NOTNULL(loss_function);
+  return loss_function;
 }
 
 bool BundleAdjustmentOptions::Check() const {
@@ -158,7 +173,7 @@ size_t BundleAdjustmentConfig::NumConstantPoints() const {
 }
 
 size_t BundleAdjustmentConfig::NumResiduals(
-    const Reconstruction& reconstruction) const {
+    const Reconstruction &reconstruction) const {
   // Count the number of observations for all added images.
   size_t num_observations = 0;
   for (const image_t image_id : image_ids_) {
@@ -171,8 +186,8 @@ size_t BundleAdjustmentConfig::NumResiduals(
   auto NumObservationsForPoint = [this,
                                   &reconstruction](const point3D_t point3D_id) {
     size_t num_observations_for_point = 0;
-    const auto& point3D = reconstruction.Point3D(point3D_id);
-    for (const auto& track_el : point3D.Track().Elements()) {
+    const auto &point3D = reconstruction.Point3D(point3D_id);
+    for (const auto &track_el : point3D.Track().Elements()) {
       if (image_ids_.count(track_el.image_id) == 0) {
         num_observations_for_point += 1;
       }
@@ -229,7 +244,7 @@ bool BundleAdjustmentConfig::HasConstantPose(const image_t image_id) const {
 }
 
 void BundleAdjustmentConfig::SetConstantTvec(const image_t image_id,
-                                             const std::vector<int>& idxs) {
+                                             const std::vector<int> &idxs) {
   CHECK_GT(idxs.size(), 0);
   CHECK_LE(idxs.size(), 3);
   CHECK(HasImage(image_id));
@@ -247,26 +262,27 @@ bool BundleAdjustmentConfig::HasConstantTvec(const image_t image_id) const {
   return constant_tvecs_.find(image_id) != constant_tvecs_.end();
 }
 
-const std::unordered_set<image_t>& BundleAdjustmentConfig::Images() const {
+const std::unordered_set<image_t> &BundleAdjustmentConfig::Images() const {
   return image_ids_;
 }
 
-const std::unordered_set<point3D_t>& BundleAdjustmentConfig::VariablePoints()
-    const {
+const std::unordered_set<point3D_t> &
+BundleAdjustmentConfig::VariablePoints() const {
   return variable_point3D_ids_;
 }
 
-const std::unordered_set<point3D_t>& BundleAdjustmentConfig::ConstantPoints()
-    const {
+const std::unordered_set<point3D_t> &
+BundleAdjustmentConfig::ConstantPoints() const {
   return constant_point3D_ids_;
 }
 
-const std::unordered_set<point3D_t>& BundleAdjustmentConfig::ConstrainedPoints() const {
-	return constrained_point3D_ids_;
+const std::unordered_set<point3D_t> &
+BundleAdjustmentConfig::ConstrainedPoints() const {
+  return constrained_point3D_ids_;
 }
 
-const std::vector<int>& BundleAdjustmentConfig::ConstantTvec(
-    const image_t image_id) const {
+const std::vector<int> &
+BundleAdjustmentConfig::ConstantTvec(const image_t image_id) const {
   return constant_tvecs_.at(image_id);
 }
 
@@ -279,10 +295,12 @@ void BundleAdjustmentConfig::AddConstantPoint(const point3D_t point3D_id) {
   CHECK(!HasVariablePoint(point3D_id));
   constant_point3D_ids_.insert(point3D_id);
 }
-
+//@lin
+//在此处他增加了一个三维点的限制，即对于添加到bundle_adjustment_config中的配置选项的物方三维点的集合进行一个限制
+//@kai add
 void BundleAdjustmentConfig::AddConstrainedPoint(const point3D_t point3D_id) {
-   CHECK(!HasConstrainedPoint(point3D_id));
-   constrained_point3D_ids_.insert(point3D_id);
+  CHECK(!HasConstrainedPoint(point3D_id));
+  constrained_point3D_ids_.insert(point3D_id);
 }
 
 bool BundleAdjustmentConfig::HasPoint(const point3D_t point3D_id) const {
@@ -299,8 +317,10 @@ bool BundleAdjustmentConfig::HasConstantPoint(
   return constant_point3D_ids_.find(point3D_id) != constant_point3D_ids_.end();
 }
 
-bool BundleAdjustmentConfig::HasConstrainedPoint(const point3D_t point3D_id) const {
-   return constrained_point3D_ids_.find(point3D_id) != constrained_point3D_ids_.end();
+bool BundleAdjustmentConfig::HasConstrainedPoint(
+    const point3D_t point3D_id) const {
+  return constrained_point3D_ids_.find(point3D_id) !=
+         constrained_point3D_ids_.end();
 }
 
 void BundleAdjustmentConfig::RemoveVariablePoint(const point3D_t point3D_id) {
@@ -310,8 +330,10 @@ void BundleAdjustmentConfig::RemoveVariablePoint(const point3D_t point3D_id) {
 void BundleAdjustmentConfig::RemoveConstantPoint(const point3D_t point3D_id) {
   constant_point3D_ids_.erase(point3D_id);
 }
-
-void BundleAdjustmentConfig::RemoveConstrainedPoint(const point3D_t point3D_id) {
+//@lin 移除三维点的限制
+//@kai
+void BundleAdjustmentConfig::RemoveConstrainedPoint(
+    const point3D_t point3D_id) {
   constrained_point3D_ids_.erase(point3D_id);
 }
 
@@ -319,19 +341,19 @@ void BundleAdjustmentConfig::RemoveConstrainedPoint(const point3D_t point3D_id) 
 // BundleAdjuster
 ////////////////////////////////////////////////////////////////////////////////
 
-BundleAdjuster::BundleAdjuster(const BundleAdjustmentOptions& options,
-                               const BundleAdjustmentConfig& config)
+BundleAdjuster::BundleAdjuster(const BundleAdjustmentOptions &options,
+                               const BundleAdjustmentConfig &config)
     : options_(options), config_(config) {
   CHECK(options_.Check());
 }
-
-bool BundleAdjuster::Solve(Reconstruction* reconstruction) {
+// 平差求解的主函数
+bool BundleAdjuster::Solve(Reconstruction *reconstruction) {
   CHECK_NOTNULL(reconstruction);
   CHECK(!problem_) << "Cannot use the same BundleAdjuster multiple times";
 
   problem_.reset(new ceres::Problem());
 
-  ceres::LossFunction* loss_function = options_.CreateLossFunction();
+  ceres::LossFunction *loss_function = options_.CreateLossFunction();
   SetUp(reconstruction, loss_function);
 
   if (problem_->NumResiduals() == 0) {
@@ -348,7 +370,7 @@ bool BundleAdjuster::Solve(Reconstruction* reconstruction) {
     solver_options.linear_solver_type = ceres::DENSE_SCHUR;
   } else if (num_images <= kMaxNumImagesDirectSparseSolver) {
     solver_options.linear_solver_type = ceres::SPARSE_SCHUR;
-  } else {  // Indirect sparse (preconditioned CG) solver.
+  } else { // Indirect sparse (preconditioned CG) solver.
     solver_options.linear_solver_type = ceres::ITERATIVE_SCHUR;
     solver_options.preconditioner_type = ceres::SCHUR_JACOBI;
   }
@@ -358,7 +380,7 @@ bool BundleAdjuster::Solve(Reconstruction* reconstruction) {
 #if CERES_VERSION_MAJOR < 2
   solver_options.num_linear_solver_threads =
       GetEffectiveNumThreads(solver_options.num_linear_solver_threads);
-#endif  // CERES_VERSION_MAJOR
+#endif // CERES_VERSION_MAJOR
 
   std::string solver_error;
   CHECK(solver_options.IsValid(&solver_error)) << solver_error;
@@ -379,57 +401,62 @@ bool BundleAdjuster::Solve(Reconstruction* reconstruction) {
   return true;
 }
 
-const ceres::Solver::Summary& BundleAdjuster::Summary() const {
+const ceres::Solver::Summary &BundleAdjuster::Summary() const {
   return summary_;
 }
-
-void BundleAdjuster::SetUp(Reconstruction* reconstruction,
-                           ceres::LossFunction* loss_function) {
+//
+void BundleAdjuster::SetUp(Reconstruction *reconstruction,
+                           ceres::LossFunction *loss_function) {
   // Warning: AddPointsToProblem assumes that AddImageToProblem is called first.
   // Do not change order of instructions!
   for (const image_t image_id : config_.Images()) {
-    AddImageToProblem(image_id, reconstruction, loss_function);
+    AddImageToProblem(image_id, reconstruction,
+                      loss_function); //添加内方位元素block
   }
   for (const auto point3D_id : config_.VariablePoints()) {
-    AddPointToProblem(point3D_id, reconstruction, loss_function);
+    AddPointToProblem(point3D_id, reconstruction,
+                      loss_function); //添加三维点block(可变动点)
   }
   for (const auto point3D_id : config_.ConstantPoints()) {
-    AddPointToProblem(point3D_id, reconstruction, loss_function);
+    AddPointToProblem(point3D_id, reconstruction,
+                      loss_function); //添加三维点block(不可变动点)
   }
-
+  // @lin 单独添加约束点的块
   // add constrained points
-  ceres::LossFunction* constrain_points_loss_function = options_.CreateConstrainPointsLossFunction();
+  ceres::LossFunction *constrain_points_loss_function =
+      options_.CreateConstrainPointsLossFunction();
   for (const auto point3D_id : config_.ConstrainedPoints()) {
-    AddConstrainedPointToProblem(point3D_id, reconstruction, constrain_points_loss_function);
+    AddConstrainedPointToProblem(point3D_id, reconstruction,
+                                 constrain_points_loss_function);
   }
 
   ParameterizeCameras(reconstruction);
   ParameterizePoints(reconstruction);
 }
 
-void BundleAdjuster::TearDown(Reconstruction*) {
+void BundleAdjuster::TearDown(Reconstruction *) {
   // Nothing to do
 }
 
 void BundleAdjuster::AddImageToProblem(const image_t image_id,
-                                       Reconstruction* reconstruction,
-                                       ceres::LossFunction* loss_function) {
-  Image& image = reconstruction->Image(image_id);
-  Camera& camera = reconstruction->Camera(image.CameraId());
+                                       Reconstruction *reconstruction,
+                                       ceres::LossFunction *loss_function) {
+  Image &image = reconstruction->Image(image_id);
+  Camera &camera = reconstruction->Camera(image.CameraId());
 
   // CostFunction assumes unit quaternions.
   image.NormalizeQvec();
 
-  double* qvec_data = image.Qvec().data();
-  double* tvec_data = image.Tvec().data();
-  double* camera_params_data = camera.ParamsData();
+  double *qvec_data = image.Qvec().data();
+  double *tvec_data = image.Tvec().data();
+  double *camera_params_data = camera.ParamsData();
 
   const bool constant_pose =
       !options_.refine_extrinsics || config_.HasConstantPose(image_id);
 
   // Add residuals to bundle adjustment problem.
   size_t num_observations = 0;
-  for (const Point2D& point2D : image.Points2D()) {
+  for (const Point2D &point2D : image.Points2D()) {
     if (!point2D.HasPoint3D()) {
       continue;
     }
@@ -437,18 +464,18 @@ void BundleAdjuster::AddImageToProblem(const image_t image_id,
     num_observations += 1;
     point3D_num_observations_[point2D.Point3DId()] += 1;
 
-    Point3D& point3D = reconstruction->Point3D(point2D.Point3DId());
+    Point3D &point3D = reconstruction->Point3D(point2D.Point3DId());
     assert(point3D.Track().Length() > 1);
 
-    ceres::CostFunction* cost_function = nullptr;
+    ceres::CostFunction *cost_function = nullptr;
 
     if (constant_pose) {
       switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                 \
-  case CameraModel::kModelId:                                          \
-    cost_function =                                                    \
-        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create( \
-            image.Qvec(), image.Tvec(), point2D.XY());                 \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create(         \
+            image.Qvec(), image.Tvec(), point2D.XY());                         \
     break;
 
         CAMERA_MODEL_SWITCH_CASES
@@ -460,10 +487,10 @@ void BundleAdjuster::AddImageToProblem(const image_t image_id,
                                  point3D.XYZ().data(), camera_params_data);
     } else {
       switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                   \
-  case CameraModel::kModelId:                                            \
-    cost_function =                                                      \
-        BundleAdjustmentCostFunction<CameraModel>::Create(point2D.XY()); \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        BundleAdjustmentCostFunction<CameraModel>::Create(point2D.XY());       \
     break;
 
         CAMERA_MODEL_SWITCH_CASES
@@ -482,13 +509,13 @@ void BundleAdjuster::AddImageToProblem(const image_t image_id,
 
     // Set pose parameterization.
     if (!constant_pose) {
-      ceres::LocalParameterization* quaternion_parameterization =
+      ceres::LocalParameterization *quaternion_parameterization =
           new ceres::QuaternionParameterization;
       problem_->SetParameterization(qvec_data, quaternion_parameterization);
       if (config_.HasConstantTvec(image_id)) {
-        const std::vector<int>& constant_tvec_idxs =
+        const std::vector<int> &constant_tvec_idxs =
             config_.ConstantTvec(image_id);
-        ceres::SubsetParameterization* tvec_parameterization =
+        ceres::SubsetParameterization *tvec_parameterization =
             new ceres::SubsetParameterization(3, constant_tvec_idxs);
         problem_->SetParameterization(tvec_data, tvec_parameterization);
       }
@@ -497,9 +524,9 @@ void BundleAdjuster::AddImageToProblem(const image_t image_id,
 }
 
 void BundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
-                                       Reconstruction* reconstruction,
-                                       ceres::LossFunction* loss_function) {
-  Point3D& point3D = reconstruction->Point3D(point3D_id);
+                                       Reconstruction *reconstruction,
+                                       ceres::LossFunction *loss_function) {
+  Point3D &point3D = reconstruction->Point3D(point3D_id);
 
   // Is 3D point already fully contained in the problem? I.e. its entire track
   // is contained in `variable_image_ids`, `constant_image_ids`,
@@ -508,7 +535,7 @@ void BundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
     return;
   }
 
-  for (const auto& track_el : point3D.Track().Elements()) {
+  for (const auto &track_el : point3D.Track().Elements()) {
     // Skip observations that were already added in `FillImages`.
     if (config_.HasImage(track_el.image_id)) {
       continue;
@@ -516,9 +543,9 @@ void BundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
 
     point3D_num_observations_[point3D_id] += 1;
 
-    Image& image = reconstruction->Image(track_el.image_id);
-    Camera& camera = reconstruction->Camera(image.CameraId());
-    const Point2D& point2D = image.Point2D(track_el.point2D_idx);
+    Image &image = reconstruction->Image(track_el.image_id);
+    Camera &camera = reconstruction->Camera(image.CameraId());
+    const Point2D &point2D = image.Point2D(track_el.point2D_idx);
 
     // We do not want to refine the camera of images that are not
     // part of `constant_image_ids_`, `constant_image_ids_`,
@@ -528,14 +555,14 @@ void BundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
       config_.SetConstantCamera(image.CameraId());
     }
 
-    ceres::CostFunction* cost_function = nullptr;
+    ceres::CostFunction *cost_function = nullptr;
 
     switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                 \
-  case CameraModel::kModelId:                                          \
-    cost_function =                                                    \
-        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create( \
-            image.Qvec(), image.Tvec(), point2D.XY());                 \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create(         \
+            image.Qvec(), image.Tvec(), point2D.XY());                         \
     break;
 
       CAMERA_MODEL_SWITCH_CASES
@@ -546,23 +573,26 @@ void BundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
                                point3D.XYZ().data(), camera.ParamsData());
   }
 }
+//@lin 添加限制点到平差区块中
+//@kai
+void BundleAdjuster::AddConstrainedPointToProblem(
+    const point3D_t point3D_id, Reconstruction *reconstruction,
+    ceres::LossFunction *loss_function) {
+  Point3D &point3D = reconstruction->Point3D(point3D_id);
+  // 创建一个三维点的结构体用于求解三维点的loss值
+  ceres::CostFunction *cost_function =
+      Point3DCostFunction::Create(point3D.XYZ());
 
-void BundleAdjuster::AddConstrainedPointToProblem(const point3D_t point3D_id,
-                                       Reconstruction* reconstruction,
-                                       ceres::LossFunction* loss_function) {
-  Point3D& point3D = reconstruction->Point3D(point3D_id);
-
-  ceres::CostFunction* cost_function = Point3DCostFunction::Create(point3D.XYZ());
-
-  problem_->AddResidualBlock(cost_function, loss_function, point3D.XYZ().data());
+  problem_->AddResidualBlock(cost_function, loss_function,
+                             point3D.XYZ().data());
 }
 
-void BundleAdjuster::ParameterizeCameras(Reconstruction* reconstruction) {
+void BundleAdjuster::ParameterizeCameras(Reconstruction *reconstruction) {
   const bool constant_camera = !options_.refine_focal_length &&
                                !options_.refine_principal_point &&
                                !options_.refine_extra_params;
   for (const camera_t camera_id : camera_ids_) {
-    Camera& camera = reconstruction->Camera(camera_id);
+    Camera &camera = reconstruction->Camera(camera_id);
 
     if (constant_camera || config_.IsConstantCamera(camera_id)) {
       problem_->SetParameterBlockConstant(camera.ParamsData());
@@ -571,23 +601,23 @@ void BundleAdjuster::ParameterizeCameras(Reconstruction* reconstruction) {
       std::vector<int> const_camera_params;
 
       if (!options_.refine_focal_length) {
-        const std::vector<size_t>& params_idxs = camera.FocalLengthIdxs();
+        const std::vector<size_t> &params_idxs = camera.FocalLengthIdxs();
         const_camera_params.insert(const_camera_params.end(),
                                    params_idxs.begin(), params_idxs.end());
       }
       if (!options_.refine_principal_point) {
-        const std::vector<size_t>& params_idxs = camera.PrincipalPointIdxs();
+        const std::vector<size_t> &params_idxs = camera.PrincipalPointIdxs();
         const_camera_params.insert(const_camera_params.end(),
                                    params_idxs.begin(), params_idxs.end());
       }
       if (!options_.refine_extra_params) {
-        const std::vector<size_t>& params_idxs = camera.ExtraParamsIdxs();
+        const std::vector<size_t> &params_idxs = camera.ExtraParamsIdxs();
         const_camera_params.insert(const_camera_params.end(),
                                    params_idxs.begin(), params_idxs.end());
       }
 
       if (const_camera_params.size() > 0) {
-        ceres::SubsetParameterization* camera_params_parameterization =
+        ceres::SubsetParameterization *camera_params_parameterization =
             new ceres::SubsetParameterization(
                 static_cast<int>(camera.NumParams()), const_camera_params);
         problem_->SetParameterization(camera.ParamsData(),
@@ -597,16 +627,16 @@ void BundleAdjuster::ParameterizeCameras(Reconstruction* reconstruction) {
   }
 }
 
-void BundleAdjuster::ParameterizePoints(Reconstruction* reconstruction) {
+void BundleAdjuster::ParameterizePoints(Reconstruction *reconstruction) {
   for (const auto elem : point3D_num_observations_) {
-    Point3D& point3D = reconstruction->Point3D(elem.first);
+    Point3D &point3D = reconstruction->Point3D(elem.first);
     if (point3D.Track().Length() > elem.second) {
       problem_->SetParameterBlockConstant(point3D.XYZ().data());
     }
   }
 
   for (const point3D_t point3D_id : config_.ConstantPoints()) {
-    Point3D& point3D = reconstruction->Point3D(point3D_id);
+    Point3D &point3D = reconstruction->Point3D(point3D_id);
     problem_->SetParameterBlockConstant(point3D.XYZ().data());
   }
 }
@@ -621,11 +651,9 @@ bool ParallelBundleAdjuster::Options::Check() const {
 }
 
 ParallelBundleAdjuster::ParallelBundleAdjuster(
-    const Options& options, const BundleAdjustmentOptions& ba_options,
-    const BundleAdjustmentConfig& config)
-    : options_(options),
-      ba_options_(ba_options),
-      config_(config),
+    const Options &options, const BundleAdjustmentOptions &ba_options,
+    const BundleAdjustmentConfig &config)
+    : options_(options), ba_options_(ba_options), config_(config),
       num_measurements_(0) {
   CHECK(options_.Check());
   CHECK(ba_options_.Check());
@@ -639,13 +667,13 @@ ParallelBundleAdjuster::ParallelBundleAdjuster(
       << "PBA does not allow to parameterize individual 3D points";
 }
 
-bool ParallelBundleAdjuster::Solve(Reconstruction* reconstruction) {
+bool ParallelBundleAdjuster::Solve(Reconstruction *reconstruction) {
   CHECK_NOTNULL(reconstruction);
   CHECK_EQ(num_measurements_, 0)
       << "Cannot use the same ParallelBundleAdjuster multiple times";
   CHECK(!ba_options_.refine_principal_point);
   CHECK_EQ(ba_options_.refine_focal_length, ba_options_.refine_extra_params);
-
+  // 设置reconstruction
   SetUp(reconstruction);
 
   pba::ParallelBA::DeviceT device;
@@ -670,7 +698,7 @@ bool ParallelBundleAdjuster::Solve(Reconstruction* reconstruction) {
   pba.SetFixedIntrinsics(!ba_options_.refine_focal_length &&
                          !ba_options_.refine_extra_params);
 
-  pba::ConfigBA* pba_config = pba.GetInternalConfig();
+  pba::ConfigBA *pba_config = pba.GetInternalConfig();
   pba_config->__lm_delta_threshold /= 100.0f;
   pba_config->__lm_gradient_threshold /= 100.0f;
   pba_config->__lm_mse_threshold = 0.0f;
@@ -711,12 +739,12 @@ bool ParallelBundleAdjuster::Solve(Reconstruction* reconstruction) {
   return true;
 }
 
-const ceres::Solver::Summary& ParallelBundleAdjuster::Summary() const {
+const ceres::Solver::Summary &ParallelBundleAdjuster::Summary() const {
   return summary_;
 }
 
-bool ParallelBundleAdjuster::IsSupported(const BundleAdjustmentOptions& options,
-                                         const Reconstruction& reconstruction) {
+bool ParallelBundleAdjuster::IsSupported(const BundleAdjustmentOptions &options,
+                                         const Reconstruction &reconstruction) {
   if (options.refine_principal_point ||
       options.refine_focal_length != options.refine_extra_params) {
     return false;
@@ -724,7 +752,7 @@ bool ParallelBundleAdjuster::IsSupported(const BundleAdjustmentOptions& options,
 
   // Check that all cameras are SIMPLE_RADIAL and that no intrinsics are shared.
   std::set<camera_t> camera_ids;
-  for (const auto& image : reconstruction.Images()) {
+  for (const auto &image : reconstruction.Images()) {
     if (image.second.IsRegistered()) {
       if (camera_ids.count(image.second.CameraId()) != 0 ||
           reconstruction.Camera(image.second.CameraId()).ModelId() !=
@@ -737,7 +765,7 @@ bool ParallelBundleAdjuster::IsSupported(const BundleAdjustmentOptions& options,
   return true;
 }
 
-void ParallelBundleAdjuster::SetUp(Reconstruction* reconstruction) {
+void ParallelBundleAdjuster::SetUp(Reconstruction *reconstruction) {
   // Important: PBA requires the track of 3D points to be stored
   // contiguously, i.e. the point3D_idxs_ vector contains consecutive indices.
   cameras_.reserve(config_.NumImages());
@@ -748,38 +776,38 @@ void ParallelBundleAdjuster::SetUp(Reconstruction* reconstruction) {
   AddPointsToProblem(reconstruction);
 }
 
-void ParallelBundleAdjuster::TearDown(Reconstruction* reconstruction) {
+void ParallelBundleAdjuster::TearDown(Reconstruction *reconstruction) {
   for (size_t i = 0; i < cameras_.size(); ++i) {
     const image_t image_id = ordered_image_ids_[i];
-    const pba::CameraT& pba_camera = cameras_[i];
+    const pba::CameraT &pba_camera = cameras_[i];
 
     // Note: Do not use PBA's quaternion methods as they seem to lead to
     // numerical instability or other issues.
-    Image& image = reconstruction->Image(image_id);
+    Image &image = reconstruction->Image(image_id);
     Eigen::Matrix3d rotation_matrix;
     pba_camera.GetMatrixRotation(rotation_matrix.data());
     pba_camera.GetTranslation(image.Tvec().data());
     image.Qvec() = RotationMatrixToQuaternion(rotation_matrix.transpose());
 
-    Camera& camera = reconstruction->Camera(image.CameraId());
+    Camera &camera = reconstruction->Camera(image.CameraId());
     camera.Params(0) = pba_camera.GetFocalLength();
     camera.Params(3) = pba_camera.GetProjectionDistortion();
   }
 
   for (size_t i = 0; i < points3D_.size(); ++i) {
-    Point3D& point3D = reconstruction->Point3D(ordered_point3D_ids_[i]);
+    Point3D &point3D = reconstruction->Point3D(ordered_point3D_ids_[i]);
     points3D_[i].GetPoint(point3D.XYZ().data());
   }
 }
 
 void ParallelBundleAdjuster::AddImagesToProblem(
-    Reconstruction* reconstruction) {
+    Reconstruction *reconstruction) {
   for (const image_t image_id : config_.Images()) {
-    const Image& image = reconstruction->Image(image_id);
+    const Image &image = reconstruction->Image(image_id);
     CHECK_EQ(camera_ids_.count(image.CameraId()), 0)
         << "PBA does not support shared intrinsics";
 
-    const Camera& camera = reconstruction->Camera(image.CameraId());
+    const Camera &camera = reconstruction->Camera(image.CameraId());
     CHECK_EQ(camera.ModelId(), SimpleRadialCameraModel::model_id)
         << "PBA only supports the SIMPLE_RADIAL camera model";
 
@@ -813,7 +841,7 @@ void ParallelBundleAdjuster::AddImagesToProblem(
     image_id_to_camera_idx_.emplace(image_id,
                                     static_cast<int>(cameras_.size()) - 1);
 
-    for (const Point2D& point2D : image.Points2D()) {
+    for (const Point2D &point2D : image.Points2D()) {
       if (point2D.HasPoint3D()) {
         point3D_ids_.insert(point2D.Point3DId());
       }
@@ -822,7 +850,7 @@ void ParallelBundleAdjuster::AddImagesToProblem(
 }
 
 void ParallelBundleAdjuster::AddPointsToProblem(
-    Reconstruction* reconstruction) {
+    Reconstruction *reconstruction) {
   points3D_.resize(point3D_ids_.size());
   ordered_point3D_ids_.resize(point3D_ids_.size());
   measurements_.resize(num_measurements_);
@@ -833,15 +861,15 @@ void ParallelBundleAdjuster::AddPointsToProblem(
   size_t measurement_idx = 0;
 
   for (const auto point3D_id : point3D_ids_) {
-    const Point3D& point3D = reconstruction->Point3D(point3D_id);
+    const Point3D &point3D = reconstruction->Point3D(point3D_id);
     points3D_[point3D_idx].SetPoint(point3D.XYZ().data());
     ordered_point3D_ids_[point3D_idx] = point3D_id;
 
     for (const auto track_el : point3D.Track().Elements()) {
       if (image_id_to_camera_idx_.count(track_el.image_id) > 0) {
-        const Image& image = reconstruction->Image(track_el.image_id);
-        const Camera& camera = reconstruction->Camera(image.CameraId());
-        const Point2D& point2D = image.Point2D(track_el.point2D_idx);
+        const Image &image = reconstruction->Image(track_el.image_id);
+        const Camera &camera = reconstruction->Camera(image.CameraId());
+        const Point2D &point2D = image.Point2D(track_el.point2D_idx);
         measurements_[measurement_idx].SetPoint2D(
             point2D.X() - camera.Params(1), point2D.Y() - camera.Params(2));
         camera_idxs_[measurement_idx] =
@@ -861,29 +889,29 @@ void ParallelBundleAdjuster::AddPointsToProblem(
 // RigBundleAdjuster
 ////////////////////////////////////////////////////////////////////////////////
 
-RigBundleAdjuster::RigBundleAdjuster(const BundleAdjustmentOptions& options,
-                                     const Options& rig_options,
-                                     const BundleAdjustmentConfig& config)
+RigBundleAdjuster::RigBundleAdjuster(const BundleAdjustmentOptions &options,
+                                     const Options &rig_options,
+                                     const BundleAdjustmentConfig &config)
     : BundleAdjuster(options, config), rig_options_(rig_options) {}
 
-bool RigBundleAdjuster::Solve(Reconstruction* reconstruction,
-                              std::vector<CameraRig>* camera_rigs) {
+bool RigBundleAdjuster::Solve(Reconstruction *reconstruction,
+                              std::vector<CameraRig> *camera_rigs) {
   CHECK_NOTNULL(reconstruction);
   CHECK_NOTNULL(camera_rigs);
   CHECK(!problem_) << "Cannot use the same BundleAdjuster multiple times";
 
   // Check the validity of the provided camera rigs.
   std::unordered_set<camera_t> rig_camera_ids;
-  for (auto& camera_rig : *camera_rigs) {
+  for (auto &camera_rig : *camera_rigs) {
     camera_rig.Check(*reconstruction);
-    for (const auto& camera_id : camera_rig.GetCameraIds()) {
+    for (const auto &camera_id : camera_rig.GetCameraIds()) {
       CHECK_EQ(rig_camera_ids.count(camera_id), 0)
           << "Camera must not be part of multiple camera rigs";
       rig_camera_ids.insert(camera_id);
     }
 
-    for (const auto& snapshot : camera_rig.Snapshots()) {
-      for (const auto& image_id : snapshot) {
+    for (const auto &snapshot : camera_rig.Snapshots()) {
+      for (const auto &image_id : snapshot) {
         CHECK_EQ(image_id_to_camera_rig_.count(image_id), 0)
             << "Image must not be part of multiple camera rigs";
         image_id_to_camera_rig_.emplace(image_id, &camera_rig);
@@ -893,7 +921,7 @@ bool RigBundleAdjuster::Solve(Reconstruction* reconstruction,
 
   problem_.reset(new ceres::Problem());
 
-  ceres::LossFunction* loss_function = options_.CreateLossFunction();
+  ceres::LossFunction *loss_function = options_.CreateLossFunction();
   SetUp(reconstruction, camera_rigs, loss_function);
 
   if (problem_->NumResiduals() == 0) {
@@ -910,7 +938,7 @@ bool RigBundleAdjuster::Solve(Reconstruction* reconstruction,
     solver_options.linear_solver_type = ceres::DENSE_SCHUR;
   } else if (num_images <= kMaxNumImagesDirectSparseSolver) {
     solver_options.linear_solver_type = ceres::SPARSE_SCHUR;
-  } else {  // Indirect sparse (preconditioned CG) solver.
+  } else { // Indirect sparse (preconditioned CG) solver.
     solver_options.linear_solver_type = ceres::ITERATIVE_SCHUR;
     solver_options.preconditioner_type = ceres::SCHUR_JACOBI;
   }
@@ -920,7 +948,7 @@ bool RigBundleAdjuster::Solve(Reconstruction* reconstruction,
 #if CERES_VERSION_MAJOR < 2
   solver_options.num_linear_solver_threads =
       GetEffectiveNumThreads(solver_options.num_linear_solver_threads);
-#endif  // CERES_VERSION_MAJOR
+#endif // CERES_VERSION_MAJOR
 
   std::string solver_error;
   CHECK(solver_options.IsValid(&solver_error)) << solver_error;
@@ -941,9 +969,9 @@ bool RigBundleAdjuster::Solve(Reconstruction* reconstruction,
   return true;
 }
 
-void RigBundleAdjuster::SetUp(Reconstruction* reconstruction,
-                              std::vector<CameraRig>* camera_rigs,
-                              ceres::LossFunction* loss_function) {
+void RigBundleAdjuster::SetUp(Reconstruction *reconstruction,
+                              std::vector<CameraRig> *camera_rigs,
+                              ceres::LossFunction *loss_function) {
   ComputeCameraRigPoses(*reconstruction, *camera_rigs);
 
   for (const image_t image_id : config_.Images()) {
@@ -961,12 +989,12 @@ void RigBundleAdjuster::SetUp(Reconstruction* reconstruction,
   ParameterizeCameraRigs(reconstruction);
 }
 
-void RigBundleAdjuster::TearDown(Reconstruction* reconstruction,
-                                 const std::vector<CameraRig>& camera_rigs) {
-  for (const auto& elem : image_id_to_camera_rig_) {
+void RigBundleAdjuster::TearDown(Reconstruction *reconstruction,
+                                 const std::vector<CameraRig> &camera_rigs) {
+  for (const auto &elem : image_id_to_camera_rig_) {
     const auto image_id = elem.first;
-    const auto& camera_rig = *elem.second;
-    auto& image = reconstruction->Image(image_id);
+    const auto &camera_rig = *elem.second;
+    auto &image = reconstruction->Image(image_id);
     ConcatenatePoses(*image_id_to_rig_qvec_.at(image_id),
                      *image_id_to_rig_tvec_.at(image_id),
                      camera_rig.RelativeQvec(image.CameraId()),
@@ -976,24 +1004,24 @@ void RigBundleAdjuster::TearDown(Reconstruction* reconstruction,
 }
 
 void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
-                                          Reconstruction* reconstruction,
-                                          std::vector<CameraRig>* camera_rigs,
-                                          ceres::LossFunction* loss_function) {
+                                          Reconstruction *reconstruction,
+                                          std::vector<CameraRig> *camera_rigs,
+                                          ceres::LossFunction *loss_function) {
   const double max_squared_reproj_error =
       rig_options_.max_reproj_error * rig_options_.max_reproj_error;
 
-  Image& image = reconstruction->Image(image_id);
-  Camera& camera = reconstruction->Camera(image.CameraId());
+  Image &image = reconstruction->Image(image_id);
+  Camera &camera = reconstruction->Camera(image.CameraId());
 
   const bool constant_pose = config_.HasConstantPose(image_id);
   const bool constant_tvec = config_.HasConstantTvec(image_id);
 
-  double* qvec_data = nullptr;
-  double* tvec_data = nullptr;
-  double* rig_qvec_data = nullptr;
-  double* rig_tvec_data = nullptr;
-  double* camera_params_data = camera.ParamsData();
-  CameraRig* camera_rig = nullptr;
+  double *qvec_data = nullptr;
+  double *tvec_data = nullptr;
+  double *rig_qvec_data = nullptr;
+  double *rig_tvec_data = nullptr;
+  double *camera_params_data = camera.ParamsData();
+  CameraRig *camera_rig = nullptr;
   Eigen::Matrix3x4d rig_proj_matrix = Eigen::Matrix3x4d::Zero();
 
   if (image_id_to_camera_rig_.count(image_id) > 0) {
@@ -1032,12 +1060,12 @@ void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
   size_t num_observations = 0;
 
   // Add residuals to bundle adjustment problem.
-  for (const Point2D& point2D : image.Points2D()) {
+  for (const Point2D &point2D : image.Points2D()) {
     if (!point2D.HasPoint3D()) {
       continue;
     }
 
-    Point3D& point3D = reconstruction->Point3D(point2D.Point3DId());
+    Point3D &point3D = reconstruction->Point3D(point2D.Point3DId());
     assert(point3D.Track().Length() > 1);
 
     if (camera_rig != nullptr &&
@@ -1050,16 +1078,16 @@ void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
     num_observations += 1;
     point3D_num_observations_[point2D.Point3DId()] += 1;
 
-    ceres::CostFunction* cost_function = nullptr;
+    ceres::CostFunction *cost_function = nullptr;
 
     if (camera_rig == nullptr) {
       if (constant_pose) {
         switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                 \
-  case CameraModel::kModelId:                                          \
-    cost_function =                                                    \
-        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create( \
-            image.Qvec(), image.Tvec(), point2D.XY());                 \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create(         \
+            image.Qvec(), image.Tvec(), point2D.XY());                         \
     break;
 
           CAMERA_MODEL_SWITCH_CASES
@@ -1071,10 +1099,10 @@ void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
                                    point3D.XYZ().data(), camera_params_data);
       } else {
         switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                   \
-  case CameraModel::kModelId:                                            \
-    cost_function =                                                      \
-        BundleAdjustmentCostFunction<CameraModel>::Create(point2D.XY()); \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        BundleAdjustmentCostFunction<CameraModel>::Create(point2D.XY());       \
     break;
 
           CAMERA_MODEL_SWITCH_CASES
@@ -1088,11 +1116,11 @@ void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
       }
     } else {
       switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                      \
-  case CameraModel::kModelId:                                               \
-    cost_function =                                                         \
-        RigBundleAdjustmentCostFunction<CameraModel>::Create(point2D.XY()); \
-                                                                            \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        RigBundleAdjustmentCostFunction<CameraModel>::Create(point2D.XY());    \
+                                                                               \
     break;
 
         CAMERA_MODEL_SWITCH_CASES
@@ -1123,9 +1151,9 @@ void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
 
     // Set pose parameterization.
     if (!constant_pose && constant_tvec) {
-      const std::vector<int>& constant_tvec_idxs =
+      const std::vector<int> &constant_tvec_idxs =
           config_.ConstantTvec(image_id);
-      ceres::SubsetParameterization* tvec_parameterization =
+      ceres::SubsetParameterization *tvec_parameterization =
           new ceres::SubsetParameterization(3, constant_tvec_idxs);
       problem_->SetParameterization(tvec_data, tvec_parameterization);
     }
@@ -1133,9 +1161,9 @@ void RigBundleAdjuster::AddImageToProblem(const image_t image_id,
 }
 
 void RigBundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
-                                          Reconstruction* reconstruction,
-                                          ceres::LossFunction* loss_function) {
-  Point3D& point3D = reconstruction->Point3D(point3D_id);
+                                          Reconstruction *reconstruction,
+                                          ceres::LossFunction *loss_function) {
+  Point3D &point3D = reconstruction->Point3D(point3D_id);
 
   // Is 3D point already fully contained in the problem? I.e. its entire track
   // is contained in `variable_image_ids`, `constant_image_ids`,
@@ -1144,7 +1172,7 @@ void RigBundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
     return;
   }
 
-  for (const auto& track_el : point3D.Track().Elements()) {
+  for (const auto &track_el : point3D.Track().Elements()) {
     // Skip observations that were already added in `AddImageToProblem`.
     if (config_.HasImage(track_el.image_id)) {
       continue;
@@ -1152,9 +1180,9 @@ void RigBundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
 
     point3D_num_observations_[point3D_id] += 1;
 
-    Image& image = reconstruction->Image(track_el.image_id);
-    Camera& camera = reconstruction->Camera(image.CameraId());
-    const Point2D& point2D = image.Point2D(track_el.point2D_idx);
+    Image &image = reconstruction->Image(track_el.image_id);
+    Camera &camera = reconstruction->Camera(image.CameraId());
+    const Point2D &point2D = image.Point2D(track_el.point2D_idx);
 
     // We do not want to refine the camera of images that are not
     // part of `constant_image_ids_`, `constant_image_ids_`,
@@ -1164,16 +1192,16 @@ void RigBundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
       config_.SetConstantCamera(image.CameraId());
     }
 
-    ceres::CostFunction* cost_function = nullptr;
+    ceres::CostFunction *cost_function = nullptr;
 
     switch (camera.ModelId()) {
-#define CAMERA_MODEL_CASE(CameraModel)                                     \
-  case CameraModel::kModelId:                                              \
-    cost_function =                                                        \
-        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create(     \
-            image.Qvec(), image.Tvec(), point2D.XY());                     \
-    problem_->AddResidualBlock(cost_function, loss_function,               \
-                               point3D.XYZ().data(), camera.ParamsData()); \
+#define CAMERA_MODEL_CASE(CameraModel)                                         \
+  case CameraModel::kModelId:                                                  \
+    cost_function =                                                            \
+        BundleAdjustmentConstantPoseCostFunction<CameraModel>::Create(         \
+            image.Qvec(), image.Tvec(), point2D.XY());                         \
+    problem_->AddResidualBlock(cost_function, loss_function,                   \
+                               point3D.XYZ().data(), camera.ParamsData());     \
     break;
 
       CAMERA_MODEL_SWITCH_CASES
@@ -1184,15 +1212,15 @@ void RigBundleAdjuster::AddPointToProblem(const point3D_t point3D_id,
 }
 
 void RigBundleAdjuster::ComputeCameraRigPoses(
-    const Reconstruction& reconstruction,
-    const std::vector<CameraRig>& camera_rigs) {
+    const Reconstruction &reconstruction,
+    const std::vector<CameraRig> &camera_rigs) {
   camera_rig_qvecs_.reserve(camera_rigs.size());
   camera_rig_tvecs_.reserve(camera_rigs.size());
-  for (const auto& camera_rig : camera_rigs) {
+  for (const auto &camera_rig : camera_rigs) {
     camera_rig_qvecs_.emplace_back();
     camera_rig_tvecs_.emplace_back();
-    auto& rig_qvecs = camera_rig_qvecs_.back();
-    auto& rig_tvecs = camera_rig_tvecs_.back();
+    auto &rig_qvecs = camera_rig_qvecs_.back();
+    auto &rig_tvecs = camera_rig_tvecs_.back();
     rig_qvecs.resize(camera_rig.NumSnapshots());
     rig_tvecs.resize(camera_rig.NumSnapshots());
     for (size_t snapshot_idx = 0; snapshot_idx < camera_rig.NumSnapshots();
@@ -1208,15 +1236,15 @@ void RigBundleAdjuster::ComputeCameraRigPoses(
   }
 }
 
-void RigBundleAdjuster::ParameterizeCameraRigs(Reconstruction* reconstruction) {
-  for (double* qvec_data : parameterized_qvec_data_) {
-    ceres::LocalParameterization* quaternion_parameterization =
+void RigBundleAdjuster::ParameterizeCameraRigs(Reconstruction *reconstruction) {
+  for (double *qvec_data : parameterized_qvec_data_) {
+    ceres::LocalParameterization *quaternion_parameterization =
         new ceres::QuaternionParameterization;
     problem_->SetParameterization(qvec_data, quaternion_parameterization);
   }
 }
 
-void PrintSolverSummary(const ceres::Solver::Summary& summary) {
+void PrintSolverSummary(const ceres::Solver::Summary &summary) {
   std::cout << std::right << std::setw(16) << "Residuals : ";
   std::cout << std::left << summary.num_residuals_reduced << std::endl;
 
@@ -1248,28 +1276,28 @@ void PrintSolverSummary(const ceres::Solver::Summary& summary) {
   std::string termination = "";
 
   switch (summary.termination_type) {
-    case ceres::CONVERGENCE:
-      termination = "Convergence";
-      break;
-    case ceres::NO_CONVERGENCE:
-      termination = "No convergence";
-      break;
-    case ceres::FAILURE:
-      termination = "Failure";
-      break;
-    case ceres::USER_SUCCESS:
-      termination = "User success";
-      break;
-    case ceres::USER_FAILURE:
-      termination = "User failure";
-      break;
-    default:
-      termination = "Unknown";
-      break;
+  case ceres::CONVERGENCE:
+    termination = "Convergence";
+    break;
+  case ceres::NO_CONVERGENCE:
+    termination = "No convergence";
+    break;
+  case ceres::FAILURE:
+    termination = "Failure";
+    break;
+  case ceres::USER_SUCCESS:
+    termination = "User success";
+    break;
+  case ceres::USER_FAILURE:
+    termination = "User failure";
+    break;
+  default:
+    termination = "Unknown";
+    break;
   }
 
   std::cout << std::right << termination << std::endl;
   std::cout << std::endl;
 }
 
-}  // namespace colmap
+} // namespace colmap

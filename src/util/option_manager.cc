@@ -430,7 +430,8 @@ void OptionManager::AddTransitiveMatchingOptions() {
   AddAndRegisterDefaultOption("TransitiveMatching.num_iterations",
                               &transitive_matching->num_iterations);
 }
-
+//@lin 此处进行BA option设置
+//@kai
 void OptionManager::AddBundleAdjustmentOptions() {
   if (added_ba_options_) {
     return;
@@ -460,6 +461,7 @@ void OptionManager::AddBundleAdjustmentOptions() {
                               &bundle_adjustment->refine_extra_params);
   AddAndRegisterDefaultOption("BundleAdjustment.refine_extrinsics",
                               &bundle_adjustment->refine_extrinsics);
+  // 设置权重选项，即用户从外侧进行指定
   // constrain points options
   AddAndRegisterDefaultOption("BundleAdjustment.constrain_points",
                               &bundle_adjustment->constrain_points);

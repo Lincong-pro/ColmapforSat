@@ -123,7 +123,7 @@ Eigen::Matrix3d Camera::CalibrationMatrix() const {
 
   K(0, 2) = PrincipalPointX();
   K(1, 2) = PrincipalPointY();
-
+  // @lin add 检查相机是否为Perspective模型，如何是该模型就添加新的参数s进行K矩阵返回
   // check if the camera model is perspective
   if (model_id_ == PerspectiveCameraModel::model_id) {
     const std::vector<size_t>& extra_params_idxs = ExtraParamsIdxs();

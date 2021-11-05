@@ -43,7 +43,6 @@ if(MSVC)
     add_definitions("-DVL_DISABLE_AVX")
     add_definitions("-DVL_DISABLE_SSE2")
 endif()
-
 # set cmake cxx compiler and c compiler
 # set(CMAKE_C_COMPILER /usr/bin/gcc CACHE PATH "" FORCE)
 # set(CMAKE_CXX_COMPILER /usr/bin/g++ CACHE PATH "" FORCE)
@@ -98,7 +97,7 @@ endif()
 
 find_package(Ceres REQUIRED)
 
-set(Boost_USE_STATIC_LIBS OFF)
+set(Boost_USE_STATIC_LIBS ON)
 
 find_package(Boost REQUIRED COMPONENTS
              program_options

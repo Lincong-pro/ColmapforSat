@@ -1,32 +1,42 @@
 // ===============================================================================================================
 // Copyright (c) 2019, Cornell University. All rights reserved.
 //
-// Redistribution and use in source and binary forms, with or without modification, are permitted provided that
-// the following conditions are met:
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
 //
-//     * Redistributions of source code must retain the above copyright otice, this list of conditions and
+//     * Redistributions of source code must retain the above copyright otice,
+//     this list of conditions and
 //       the following disclaimer.
 //
-//     * Redistributions in binary form must reproduce the above copyright notice, this list of conditions and
-//       the following disclaimer in the documentation and/or other materials provided with the distribution.
-//       
-//     * Neither the name of Cornell University nor the names of its contributors may be used to endorse or
-//       promote products derived from this software without specific prior written permission.
+//     * Redistributions in binary form must reproduce the above copyright
+//     notice, this list of conditions and
+//       the following disclaimer in the documentation and/or other materials
+//       provided with the distribution.
 //
-// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED 
-// WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-// A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE
-// FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED
-// TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
-// HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING 
-// NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
-// OF SUCH DAMAGE.
+//     * Neither the name of Cornell University nor the names of its
+//     contributors may be used to endorse or
+//       promote products derived from this software without specific prior
+//       written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+// AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+// IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+// ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDERS OR CONTRIBUTORS BE
+// LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+// CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+// SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+// INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN
+// CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+// ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+// POSSIBILITY OF SUCH DAMAGE.
 //
 // Author: Kai Zhang (kz298@cornell.edu)
 //
-// The research is based upon work supported by the Office of the Director of National Intelligence (ODNI),     
-// Intelligence Advanced Research Projects Activity (IARPA), via DOI/IBC Contract Number D17PC00287.            
-// The U.S. Government is authorized to reproduce and distribute copies of this work for Governmental purposes. 
+// The research is based upon work supported by the Office of the Director of
+// National Intelligence (ODNI), Intelligence Advanced Research Projects
+// Activity (IARPA), via DOI/IBC Contract Number D17PC00287. The U.S. Government
+// is authorized to reproduce and distribute copies of this work for
+// Governmental purposes.
 // ===============================================================================================================
 //
 //
@@ -71,9 +81,9 @@
 
 #include <ceres/ceres.h>
 
+#include "PBA/pba.h"
 #include "base/camera_rig.h"
 #include "base/reconstruction.h"
-#include "PBA/pba.h"
 #include "util/alignment.h"
 
 namespace colmap {
@@ -101,11 +111,15 @@ struct BundleAdjustmentOptions {
   // Whether to print a final summary.
   bool print_summary = true;
 
+  //@lin BA_config用于配置是否对三维点进行一个soft constraint
+  //@kai
   // whether to add soft constraint on 3D points
-  bool constrain_points = false;
-  LossFunctionType constrain_points_loss = LossFunctionType::TRIVIAL;
-  double constrain_points_loss_scale = 1.0;
-  double constrain_points_loss_weight = 1.0;
+  bool constrain_points = false; //默认情况是不开启三维点的限制的
+  LossFunctionType constrain_points_loss =
+      LossFunctionType::TRIVIAL; //设置loss fucntion的类型为trivial
+  double constrain_points_loss_scale = 1.0; //限制的缩放尺度是1.0
+  double constrain_points_loss_weight =
+      1.0; //限制的权重是1.0,本次论文中设置的为0.01
 
   // Ceres-Solver options.
   ceres::Solver::Options solver_options;
@@ -122,20 +136,22 @@ struct BundleAdjustmentOptions {
     solver_options.num_threads = -1;
 #if CERES_VERSION_MAJOR < 2
     solver_options.num_linear_solver_threads = -1;
-#endif  // CERES_VERSION_MAJOR
+#endif // CERES_VERSION_MAJOR
   }
 
   // Create a new loss function based on the specified options. The caller
   // takes ownership of the loss function.
-  ceres::LossFunction* CreateLossFunction() const;
-  ceres::LossFunction* CreateConstrainPointsLossFunction() const;
+  ceres::LossFunction *CreateLossFunction() const;
+  //@lin 创建三维点限制的loss函数
+  //@kai
+  ceres::LossFunction *CreateConstrainPointsLossFunction() const;
 
   bool Check() const;
 };
 
 // Configuration container to setup bundle adjustment problems.
 class BundleAdjustmentConfig {
- public:
+public:
   BundleAdjustmentConfig();
 
   size_t NumImages() const;
@@ -148,7 +164,7 @@ class BundleAdjustmentConfig {
 
   // Determine the number of residuals for the given reconstruction. The number
   // of residuals equals the number of observations times two.
-  size_t NumResiduals(const Reconstruction& reconstruction) const;
+  size_t NumResiduals(const Reconstruction &reconstruction) const;
 
   // Add / remove images from the configuration.
   void AddImage(const image_t image_id);
@@ -171,7 +187,7 @@ class BundleAdjustmentConfig {
   // Set the translational part of the pose, hence the constant pose
   // indices may be in [0, 1, 2] and must be unique. Note that the
   // corresponding images have to be added prior to calling these methods.
-  void SetConstantTvec(const image_t image_id, const std::vector<int>& idxs);
+  void SetConstantTvec(const image_t image_id, const std::vector<int> &idxs);
   void RemoveConstantTvec(const image_t image_id);
   bool HasConstantTvec(const image_t image_id) const;
 
@@ -188,17 +204,17 @@ class BundleAdjustmentConfig {
   void RemoveConstantPoint(const point3D_t point3D_id);
   void RemoveConstrainedPoint(const point3D_t point3D_id);
   // Access configuration data.
-  const std::unordered_set<image_t>& Images() const;
-  const std::unordered_set<point3D_t>& VariablePoints() const;
-  const std::unordered_set<point3D_t>& ConstantPoints() const;
-  const std::unordered_set<point3D_t>& ConstrainedPoints() const;
-  const std::vector<int>& ConstantTvec(const image_t image_id) const;
+  const std::unordered_set<image_t> &Images() const;
+  const std::unordered_set<point3D_t> &VariablePoints() const;
+  const std::unordered_set<point3D_t> &ConstantPoints() const;
+  const std::unordered_set<point3D_t> &ConstrainedPoints() const;
+  const std::vector<int> &ConstantTvec(const image_t image_id) const;
 
- private:
+private:
   std::unordered_set<camera_t> constant_camera_ids_;
   std::unordered_set<image_t> image_ids_;
-  std::unordered_set<point3D_t> variable_point3D_ids_;
-  std::unordered_set<point3D_t> constant_point3D_ids_;
+  std::unordered_set<point3D_t> variable_point3D_ids_;//可变点
+  std::unordered_set<point3D_t> constant_point3D_ids_;//不可变点
   // add constrained 3D points
   std::unordered_set<point3D_t> constrained_point3D_ids_;
 
@@ -209,34 +225,37 @@ class BundleAdjustmentConfig {
 // Bundle adjustment based on Ceres-Solver. Enables most flexible configurations
 // and provides best solution quality.
 class BundleAdjuster {
- public:
-  BundleAdjuster(const BundleAdjustmentOptions& options,
-                 const BundleAdjustmentConfig& config);
+public:
+  BundleAdjuster(const BundleAdjustmentOptions &options,
+                 const BundleAdjustmentConfig &config);
 
-  bool Solve(Reconstruction* reconstruction);
+  bool Solve(Reconstruction *reconstruction);
 
   // Get the Ceres solver summary for the last call to `Solve`.
-  const ceres::Solver::Summary& Summary() const;
+  const ceres::Solver::Summary &Summary() const;
 
- private:
-  void SetUp(Reconstruction* reconstruction,
-             ceres::LossFunction* loss_function);
-  void TearDown(Reconstruction* reconstruction);
+private:
+  //@lin 构建平差块，同时添加loss选项
+  void SetUp(Reconstruction *reconstruction,
+             ceres::LossFunction *loss_function);
+  void TearDown(Reconstruction *reconstruction);
 
-  void AddImageToProblem(const image_t image_id, Reconstruction* reconstruction,
-                         ceres::LossFunction* loss_function);
+  void AddImageToProblem(const image_t image_id, Reconstruction *reconstruction,
+                         ceres::LossFunction *loss_function);
 
   void AddPointToProblem(const point3D_t point3D_id,
-                         Reconstruction* reconstruction,
-                         ceres::LossFunction* loss_function);
+                         Reconstruction *reconstruction,
+                         ceres::LossFunction *loss_function);
+  // @lin 添加带有限制的三维点到Problem区块中
+  // @kai
   // add constrained point to problem
   void AddConstrainedPointToProblem(const point3D_t point3D_id,
-		                 Reconstruction* reconstruction,
-                         ceres::LossFunction* loss_function);
+                                    Reconstruction *reconstruction,
+                                    ceres::LossFunction *loss_function);
 
- protected:
-  void ParameterizeCameras(Reconstruction* reconstruction);
-  void ParameterizePoints(Reconstruction* reconstruction);
+protected:
+  void ParameterizeCameras(Reconstruction *reconstruction);
+  void ParameterizePoints(Reconstruction *reconstruction);
   // void ParameterizeConstrainedPoints(Reconstruction* reconstruction);
 
   const BundleAdjustmentOptions options_;
@@ -251,7 +270,7 @@ class BundleAdjuster {
 // Ceres-Solver bundle adjustment but much faster. Only supports SimpleRadial
 // camera model.
 class ParallelBundleAdjuster {
- public:
+public:
   struct Options {
     // Whether to print a final summary.
     bool print_summary = true;
@@ -268,26 +287,26 @@ class ParallelBundleAdjuster {
     bool Check() const;
   };
 
-  ParallelBundleAdjuster(const Options& options,
-                         const BundleAdjustmentOptions& ba_options,
-                         const BundleAdjustmentConfig& config);
+  ParallelBundleAdjuster(const Options &options,
+                         const BundleAdjustmentOptions &ba_options,
+                         const BundleAdjustmentConfig &config);
 
-  bool Solve(Reconstruction* reconstruction);
+  bool Solve(Reconstruction *reconstruction);
 
   // Get the Ceres solver summary for the last call to `Solve`.
-  const ceres::Solver::Summary& Summary() const;
+  const ceres::Solver::Summary &Summary() const;
 
   // Check whether PBA is supported for the given reconstruction. If the
   // reconstruction is not supported, the PBA solver will exit ungracefully.
-  static bool IsSupported(const BundleAdjustmentOptions& options,
-                          const Reconstruction& reconstruction);
+  static bool IsSupported(const BundleAdjustmentOptions &options,
+                          const Reconstruction &reconstruction);
 
- private:
-  void SetUp(Reconstruction* reconstruction);
-  void TearDown(Reconstruction* reconstruction);
+private:
+  void SetUp(Reconstruction *reconstruction);
+  void TearDown(Reconstruction *reconstruction);
 
-  void AddImagesToProblem(Reconstruction* reconstruction);
-  void AddPointsToProblem(Reconstruction* reconstruction);
+  void AddImagesToProblem(Reconstruction *reconstruction);
+  void AddPointsToProblem(Reconstruction *reconstruction);
 
   const Options options_;
   const BundleAdjustmentOptions ba_options_;
@@ -308,7 +327,7 @@ class ParallelBundleAdjuster {
 };
 
 class RigBundleAdjuster : public BundleAdjuster {
- public:
+public:
   struct Options {
     // Whether to optimize the relative poses of the camera rigs.
     bool refine_relative_poses = true;
@@ -321,41 +340,41 @@ class RigBundleAdjuster : public BundleAdjuster {
     double max_reproj_error = 1000.0;
   };
 
-  RigBundleAdjuster(const BundleAdjustmentOptions& options,
-                    const Options& rig_options,
-                    const BundleAdjustmentConfig& config);
+  RigBundleAdjuster(const BundleAdjustmentOptions &options,
+                    const Options &rig_options,
+                    const BundleAdjustmentConfig &config);
 
-  bool Solve(Reconstruction* reconstruction,
-             std::vector<CameraRig>* camera_rigs);
+  bool Solve(Reconstruction *reconstruction,
+             std::vector<CameraRig> *camera_rigs);
 
- private:
-  void SetUp(Reconstruction* reconstruction,
-             std::vector<CameraRig>* camera_rigs,
-             ceres::LossFunction* loss_function);
-  void TearDown(Reconstruction* reconstruction,
-                const std::vector<CameraRig>& camera_rigs);
+private:
+  void SetUp(Reconstruction *reconstruction,
+             std::vector<CameraRig> *camera_rigs,
+             ceres::LossFunction *loss_function);
+  void TearDown(Reconstruction *reconstruction,
+                const std::vector<CameraRig> &camera_rigs);
 
-  void AddImageToProblem(const image_t image_id, Reconstruction* reconstruction,
-                         std::vector<CameraRig>* camera_rigs,
-                         ceres::LossFunction* loss_function);
+  void AddImageToProblem(const image_t image_id, Reconstruction *reconstruction,
+                         std::vector<CameraRig> *camera_rigs,
+                         ceres::LossFunction *loss_function);
 
   void AddPointToProblem(const point3D_t point3D_id,
-                         Reconstruction* reconstruction,
-                         ceres::LossFunction* loss_function);
+                         Reconstruction *reconstruction,
+                         ceres::LossFunction *loss_function);
 
-  void ComputeCameraRigPoses(const Reconstruction& reconstruction,
-                             const std::vector<CameraRig>& camera_rigs);
+  void ComputeCameraRigPoses(const Reconstruction &reconstruction,
+                             const std::vector<CameraRig> &camera_rigs);
 
-  void ParameterizeCameraRigs(Reconstruction* reconstruction);
+  void ParameterizeCameraRigs(Reconstruction *reconstruction);
 
   const Options rig_options_;
 
   // Mapping from images to camera rigs.
-  std::unordered_map<image_t, CameraRig*> image_id_to_camera_rig_;
+  std::unordered_map<image_t, CameraRig *> image_id_to_camera_rig_;
 
   // Mapping from images to the absolute camera rig poses.
-  std::unordered_map<image_t, Eigen::Vector4d*> image_id_to_rig_qvec_;
-  std::unordered_map<image_t, Eigen::Vector3d*> image_id_to_rig_tvec_;
+  std::unordered_map<image_t, Eigen::Vector4d *> image_id_to_rig_qvec_;
+  std::unordered_map<image_t, Eigen::Vector3d *> image_id_to_rig_tvec_;
 
   // For each camera rig, the absolute camera rig poses.
   std::vector<std::vector<Eigen::Vector4d>> camera_rig_qvecs_;
@@ -363,11 +382,11 @@ class RigBundleAdjuster : public BundleAdjuster {
 
   // The Quaternions added to the problem, used to set the local
   // parameterization once after setting up the problem.
-  std::unordered_set<double*> parameterized_qvec_data_;
+  std::unordered_set<double *> parameterized_qvec_data_;
 };
 
-void PrintSolverSummary(const ceres::Solver::Summary& summary);
+void PrintSolverSummary(const ceres::Solver::Summary &summary);
 
-}  // namespace colmap
+} // namespace colmap
 
-#endif  // COLMAP_SRC_OPTIM_BUNDLE_ADJUSTMENT_H_
+#endif // COLMAP_SRC_OPTIM_BUNDLE_ADJUSTMENT_H_

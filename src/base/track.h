@@ -39,6 +39,7 @@
 
 namespace colmap {
 
+// @lin Track存放了一个三维点的所有的观测方程
 // Track class stores all observations of a 3D point.
 struct TrackElement {
   TrackElement();
@@ -54,7 +55,7 @@ class Track {
   Track();
 
   // The number of track elements.
-  inline size_t Length() const;
+  inline size_t Length() const;// @Track代表一个三维点在所有影像的数量，一个TrackElement存放该三维点所对应的影像的id，以及在某张影像上的二维点
 
   // Access all elements.
   inline const std::vector<TrackElement>& Elements() const;

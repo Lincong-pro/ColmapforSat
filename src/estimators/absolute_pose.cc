@@ -28,7 +28,6 @@
 // POSSIBILITY OF SUCH DAMAGE.
 //
 // Author: Johannes L. Schoenberger (jsch-at-demuc-dot-de)
-
 #include "estimators/absolute_pose.h"
 
 #include "base/polynomial.h"
@@ -38,14 +37,15 @@
 namespace colmap {
 namespace {
 
-Eigen::Vector3d LiftImagePoint(const Eigen::Vector2d& point) {
+Eigen::Vector3d LiftImagePoint(const Eigen::Vector2d &point) {
   return point.homogeneous() / std::sqrt(point.squaredNorm() + 1);
 }
 
-}  // namespace
+} // namespace
 
-std::vector<P3PEstimator::M_t> P3PEstimator::Estimate(
-    const std::vector<X_t>& points2D, const std::vector<Y_t>& points3D) {
+std::vector<P3PEstimator::M_t>
+P3PEstimator::Estimate(const std::vector<X_t> &points2D,
+                       const std::vector<Y_t> &points3D) {
   CHECK_EQ(points2D.size(), 3);
   CHECK_EQ(points3D.size(), 3);
 
@@ -160,9 +160,9 @@ std::vector<P3PEstimator::M_t> P3PEstimator::Estimate(
     const double dist_PA = x * dist_PC;
 
     Eigen::Matrix3d points3D_camera;
-    points3D_camera.col(0) = u * dist_PA;  // A'
-    points3D_camera.col(1) = v * dist_PB;  // B'
-    points3D_camera.col(2) = w * dist_PC;  // C'
+    points3D_camera.col(0) = u * dist_PA; // A'
+    points3D_camera.col(1) = v * dist_PB; // B'
+    points3D_camera.col(2) = w * dist_PC; // C'
 
     // Find transformation from the world to the camera system.
     const Eigen::Matrix4d transform =
@@ -173,15 +173,16 @@ std::vector<P3PEstimator::M_t> P3PEstimator::Estimate(
   return models;
 }
 
-void P3PEstimator::Residuals(const std::vector<X_t>& points2D,
-                             const std::vector<Y_t>& points3D,
-                             const M_t& proj_matrix,
-                             std::vector<double>* residuals) {
+void P3PEstimator::Residuals(const std::vector<X_t> &points2D,
+                             const std::vector<Y_t> &points3D,
+                             const M_t &proj_matrix,
+                             std::vector<double> *residuals) {
   ComputeSquaredReprojectionError(points2D, points3D, proj_matrix, residuals);
 }
 
-std::vector<EPNPEstimator::M_t> EPNPEstimator::Estimate(
-    const std::vector<X_t>& points2D, const std::vector<Y_t>& points3D) {
+std::vector<EPNPEstimator::M_t>
+EPNPEstimator::Estimate(const std::vector<X_t> &points2D,
+                        const std::vector<Y_t> &points3D) {
   CHECK_GE(points2D.size(), 4);
   CHECK_EQ(points2D.size(), points3D.size());
 
@@ -194,16 +195,16 @@ std::vector<EPNPEstimator::M_t> EPNPEstimator::Estimate(
   return std::vector<EPNPEstimator::M_t>({proj_matrix});
 }
 
-void EPNPEstimator::Residuals(const std::vector<X_t>& points2D,
-                              const std::vector<Y_t>& points3D,
-                              const M_t& proj_matrix,
-                              std::vector<double>* residuals) {
+void EPNPEstimator::Residuals(const std::vector<X_t> &points2D,
+                              const std::vector<Y_t> &points3D,
+                              const M_t &proj_matrix,
+                              std::vector<double> *residuals) {
   ComputeSquaredReprojectionError(points2D, points3D, proj_matrix, residuals);
 }
 
-bool EPNPEstimator::ComputePose(const std::vector<Eigen::Vector2d>& points2D,
-                                const std::vector<Eigen::Vector3d>& points3D,
-                                Eigen::Matrix3x4d* proj_matrix) {
+bool EPNPEstimator::ComputePose(const std::vector<Eigen::Vector2d> &points2D,
+                                const std::vector<Eigen::Vector3d> &points3D,
+                                Eigen::Matrix3x4d *proj_matrix) {
   points2D_ = &points2D;
   points3D_ = &points3D;
 
@@ -268,8 +269,8 @@ void EPNPEstimator::ChooseControlPoints() {
   }
 
   const Eigen::Matrix3d PW0tPW0 = PW0.transpose() * PW0;
-  Eigen::JacobiSVD<Eigen::Matrix3d> svd(
-      PW0tPW0, Eigen::ComputeFullV | Eigen::ComputeFullU);
+  Eigen::JacobiSVD<Eigen::Matrix3d> svd(PW0tPW0, Eigen::ComputeFullV |
+                                                     Eigen::ComputeFullU);
   const Eigen::Vector3d D = svd.singularValues();
   const Eigen::Matrix3d Ut = svd.matrixU().transpose();
 
@@ -322,8 +323,8 @@ Eigen::Matrix<double, Eigen::Dynamic, 12> EPNPEstimator::ComputeM() {
   return M;
 }
 
-Eigen::Matrix<double, 6, 10> EPNPEstimator::ComputeL6x10(
-    const Eigen::Matrix<double, 12, 12>& Ut) {
+Eigen::Matrix<double, 6, 10>
+EPNPEstimator::ComputeL6x10(const Eigen::Matrix<double, 12, 12> &Ut) {
   Eigen::Matrix<double, 6, 10> L6x10;
 
   std::array<std::array<Eigen::Vector3d, 6>, 4> dv;
@@ -372,9 +373,9 @@ Eigen::Matrix<double, 6, 1> EPNPEstimator::ComputeRho() {
 // betas10        = [B11 B12 B22 B13 B23 B33 B14 B24 B34 B44]
 // betas_approx_1 = [B11 B12     B13         B14]
 
-void EPNPEstimator::FindBetasApprox1(const Eigen::Matrix<double, 6, 10>& L6x10,
-                                     const Eigen::Matrix<double, 6, 1>& rho,
-                                     Eigen::Vector4d* betas) {
+void EPNPEstimator::FindBetasApprox1(const Eigen::Matrix<double, 6, 10> &L6x10,
+                                     const Eigen::Matrix<double, 6, 1> &rho,
+                                     Eigen::Vector4d *betas) {
   Eigen::Matrix<double, 6, 4> L_6x4;
   for (int i = 0; i < 6; ++i) {
     L_6x4(i, 0) = L6x10(i, 0);
@@ -404,9 +405,9 @@ void EPNPEstimator::FindBetasApprox1(const Eigen::Matrix<double, 6, 10>& L6x10,
 // betas10        = [B11 B12 B22 B13 B23 B33 B14 B24 B34 B44]
 // betas_approx_2 = [B11 B12 B22                            ]
 
-void EPNPEstimator::FindBetasApprox2(const Eigen::Matrix<double, 6, 10>& L6x10,
-                                     const Eigen::Matrix<double, 6, 1>& rho,
-                                     Eigen::Vector4d* betas) {
+void EPNPEstimator::FindBetasApprox2(const Eigen::Matrix<double, 6, 10> &L6x10,
+                                     const Eigen::Matrix<double, 6, 1> &rho,
+                                     Eigen::Vector4d *betas) {
   Eigen::Matrix<double, 6, 3> L_6x3(6, 3);
 
   for (int i = 0; i < 6; ++i) {
@@ -439,9 +440,9 @@ void EPNPEstimator::FindBetasApprox2(const Eigen::Matrix<double, 6, 10>& L6x10,
 // betas10        = [B11 B12 B22 B13 B23 B33 B14 B24 B34 B44]
 // betas_approx_3 = [B11 B12 B22 B13 B23                    ]
 
-void EPNPEstimator::FindBetasApprox3(const Eigen::Matrix<double, 6, 10>& L6x10,
-                                     const Eigen::Matrix<double, 6, 1>& rho,
-                                     Eigen::Vector4d* betas) {
+void EPNPEstimator::FindBetasApprox3(const Eigen::Matrix<double, 6, 10> &L6x10,
+                                     const Eigen::Matrix<double, 6, 1> &rho,
+                                     Eigen::Vector4d *betas) {
   Eigen::JacobiSVD<Eigen::Matrix<double, 6, 5>> svd(
       L6x10.leftCols<5>(), Eigen::ComputeFullV | Eigen::ComputeFullU);
   Eigen::Matrix<double, 6, 1> Rho_temp = rho;
@@ -461,9 +462,9 @@ void EPNPEstimator::FindBetasApprox3(const Eigen::Matrix<double, 6, 10>& L6x10,
   (*betas)[3] = 0.0;
 }
 
-void EPNPEstimator::RunGaussNewton(const Eigen::Matrix<double, 6, 10>& L6x10,
-                                   const Eigen::Matrix<double, 6, 1>& rho,
-                                   Eigen::Vector4d* betas) {
+void EPNPEstimator::RunGaussNewton(const Eigen::Matrix<double, 6, 10> &L6x10,
+                                   const Eigen::Matrix<double, 6, 1> &rho,
+                                   Eigen::Vector4d *betas) {
   Eigen::Matrix<double, 6, 4> A;
   Eigen::Matrix<double, 6, 1> b;
 
@@ -497,9 +498,9 @@ void EPNPEstimator::RunGaussNewton(const Eigen::Matrix<double, 6, 10>& L6x10,
   }
 }
 
-double EPNPEstimator::ComputeRT(const Eigen::Matrix<double, 12, 12>& Ut,
-                                const Eigen::Vector4d& betas,
-                                Eigen::Matrix3d* R, Eigen::Vector3d* t) {
+double EPNPEstimator::ComputeRT(const Eigen::Matrix<double, 12, 12> &Ut,
+                                const Eigen::Vector4d &betas,
+                                Eigen::Matrix3d *R, Eigen::Vector3d *t) {
   ComputeCcs(betas, Ut);
   ComputePcs();
 
@@ -510,8 +511,8 @@ double EPNPEstimator::ComputeRT(const Eigen::Matrix<double, 12, 12>& Ut,
   return ComputeTotalReprojectionError(*R, *t);
 }
 
-void EPNPEstimator::ComputeCcs(const Eigen::Vector4d& betas,
-                               const Eigen::Matrix<double, 12, 12>& Ut) {
+void EPNPEstimator::ComputeCcs(const Eigen::Vector4d &betas,
+                               const Eigen::Matrix<double, 12, 12> &Ut) {
   for (int i = 0; i < 4; ++i) {
     ccs_[i][0] = ccs_[i][1] = ccs_[i][2] = 0.0;
   }
@@ -546,7 +547,7 @@ void EPNPEstimator::SolveForSign() {
   }
 }
 
-void EPNPEstimator::EstimateRT(Eigen::Matrix3d* R, Eigen::Vector3d* t) {
+void EPNPEstimator::EstimateRT(Eigen::Matrix3d *R, Eigen::Vector3d *t) {
   Eigen::Vector3d pc0 = Eigen::Vector3d::Zero();
   Eigen::Vector3d pw0 = Eigen::Vector3d::Zero();
 
@@ -566,8 +567,8 @@ void EPNPEstimator::EstimateRT(Eigen::Matrix3d* R, Eigen::Vector3d* t) {
     }
   }
 
-  Eigen::JacobiSVD<Eigen::Matrix3d> svd(
-      abt, Eigen::ComputeFullV | Eigen::ComputeFullU);
+  Eigen::JacobiSVD<Eigen::Matrix3d> svd(abt, Eigen::ComputeFullV |
+                                                 Eigen::ComputeFullU);
   const Eigen::Matrix3d abt_U = svd.matrixU();
   const Eigen::Matrix3d abt_V = svd.matrixV();
 
@@ -590,8 +591,8 @@ void EPNPEstimator::EstimateRT(Eigen::Matrix3d* R, Eigen::Vector3d* t) {
   *t = pc0 - *R * pw0;
 }
 
-double EPNPEstimator::ComputeTotalReprojectionError(const Eigen::Matrix3d& R,
-                                                    const Eigen::Vector3d& t) {
+double EPNPEstimator::ComputeTotalReprojectionError(const Eigen::Matrix3d &R,
+                                                    const Eigen::Vector3d &t) {
   Eigen::Matrix3x4d proj_matrix;
   proj_matrix.leftCols<3>() = R;
   proj_matrix.rightCols<1>() = t;
@@ -608,4 +609,4 @@ double EPNPEstimator::ComputeTotalReprojectionError(const Eigen::Matrix3d& R,
   return reproj_error;
 }
 
-}  // namespace colmap
+} // namespace colmap

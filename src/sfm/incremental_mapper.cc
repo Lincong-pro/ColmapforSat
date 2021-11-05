@@ -136,7 +136,12 @@ IncrementalMapper::IncrementalMapper(const DatabaseCache* database_cache)
       num_total_reg_images_(0),
       num_shared_reg_images_(0),
       prev_init_image_pair_id_(kInvalidImagePairId) {}
-
+/**
+ * @brief 开始进行重建
+ * @param-in 加载
+ * @param-out
+ * @author lincong comment
+ */
 void IncrementalMapper::BeginReconstruction(Reconstruction* reconstruction) {
   CHECK(reconstruction_ == nullptr);
   reconstruction_ = reconstruction;
