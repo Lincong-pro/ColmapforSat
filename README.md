@@ -1,3 +1,15 @@
+# How to compile
+```script
+cd toolchains
+robocopy ./ %CONDA_PREFIX% h2o.cmake
+robocopy ./ %CONDA_PREFIX%/Library/plugins applocal.ps1
+robocopy ./ %CONDA_PREFIX%/Library/plugins qtdeploy.ps1
+robocopy ./ %CONDA_PREFIX% applocal.ps1
+cd ..
+```
+> 注意：静态库的构建流程和动态库、可执行文件的构建流程是不一样的，静态库在编译阶段只进行编译不进行链接所依赖的库，但是对于动态库来讲如果要将某个库进行编译并生成无报错，就必须在编译生成动态库的时候就对其依赖库进行链接和检查
+
+
 ColmapForVisSat
 ======
 

@@ -51,6 +51,9 @@ add_subdirectory(ui)
 add_subdirectory(util)
 
 COLMAP_ADD_LIBRARY(colmap ${COLMAP_SOURCES})
+if(MSVC)
+    target_link_libraries(colmap PUBLIC Boost::program_options Boost::filesystem Boost::graph Boost::regex Boost::system)
+endif(MSVC)
 
 if(CUDA_ENABLED)
     set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} --use_fast_math")
@@ -68,4 +71,7 @@ if(CUDA_ENABLED)
     endif()
 
     COLMAP_ADD_CUDA_LIBRARY(colmap_cuda ${COLMAP_CUDA_SOURCES})
+    if(MSVC)
+        target_link_libraries(colmap_cuda Boost::program_options Boost::filesystem Boost::graph Boost::regex Boost::system)
+    endif(MSVC)
 endif()

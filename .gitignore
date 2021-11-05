@@ -10,6 +10,7 @@ build_ninja/
 install-debug/
 install-release/
 data/
+build/
 doc/_build
 CMakeLists.txt.user
 
